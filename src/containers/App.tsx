@@ -7,12 +7,12 @@ interface AppProps {}
 
 interface AppStates {}
 
-export default class App extends React.Component<AppProps, AppStates> {
+export class App extends React.Component<AppProps, AppStates> {
   render() {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact={true} path="/" component={Home} />
+          <Route exact path="/" component={Home} />
           <Redirect to="/" />
         </Switch>
       </BrowserRouter>
