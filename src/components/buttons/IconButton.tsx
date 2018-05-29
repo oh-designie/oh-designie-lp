@@ -6,13 +6,8 @@ interface IconButtonProps {
   readonly type: string;
 }
 
-export class IconButton extends React.Component<IconButtonProps> {
-  render() {
-    const { href = '', type } = this.props;
-    return (
-      <a href={href}>
-        <Icon className="icon-btn" type={type} />
-      </a>
-    );
-  }
-}
+export const IconButton = ({ href = '', type }: IconButtonProps) => (
+  <a href={href}>
+    <Icon className="icon-btn" type={type} />
+  </a>
+);
