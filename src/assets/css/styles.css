@@ -1,0 +1,50 @@
+@import '~antd/dist/antd.css';
+
+body {
+  font-size: 18px;
+  text-align: center;
+}
+
+.header {
+  background-color: #9a86f0;
+}
+
+.pat-container {
+  background: url('../images/bg_pattern.png') repeat;
+}
+
+.chapter-container {
+  margin: 4rem 2rem 3rem;
+}
+
+.footer {
+  color: #ffffff;
+  background-color: #9a86f0;
+}
+
+.img-phone {
+  margin-top: 3rem;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.xxl-text {
+  color: #8674d6;
+  font-size: 60px;
+  text-align: center;
+}
+
+.xl-text {
+  color: #594f8b;
+  font-size: 48px;
+  text-align: center;
+}
+
+.lg-text {
+  color: #594f8b;
+  font-size: 36px;
+  text-align: center;
+}
