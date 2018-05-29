@@ -5,16 +5,7 @@ interface HeadingProps {
   readonly text: string;
 }
 
-export class Heading extends React.Component<HeadingProps> {
-  render() {
-    const { size = 'lg', text } = this.props;
-    switch (size) {
-      case 'xxl':
-        return <h1 className={`${size}-text`}>{text}</h1>;
-      case 'xl':
-        return <h2 className={`${size}-text`}>{text}</h2>;
-      default:
-        return <h3 className={`${size}-text`}>{text}</h3>;
-    }
-  }
-}
+export const Heading = ({ size = 'lg', text }: HeadingProps) => {
+  const dom: string = size === 'xxl' ? 'h1' : size === 'xl' ? 'h2' : 'h3';
+  return React.createElement(dom, { className: `${size}-text` }, text);
+};
