@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 
+import '../assets/css/styles.css';
 import { Home } from './';
 
 interface AppProps {}
