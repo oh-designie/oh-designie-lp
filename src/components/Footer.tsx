@@ -1,18 +1,23 @@
 import * as React from 'react';
 import { Col, Layout, Row } from 'antd';
 
+import { IconButton } from '.';
+import { LocaleType } from '../locales';
 import iosBadge from '../assets/images/en_ios.png';
 import androidBadge from '../assets/images/en_android.png';
-import { IconButton } from '.';
 
-export const Footer = () => (
+interface FooterProps {
+  readonly textMap: LocaleType;
+}
+
+export const Footer = ({ textMap }: FooterProps) => (
   <Layout.Footer className="footer">
     <Row gutter={24} type="flex" justify="center" align="middle">
       <Col>
-        <img src={iosBadge} />
+        <img alt={textMap.app_store} src={iosBadge} />
       </Col>
       <Col>
-        <img src={androidBadge} />
+        <img alt={textMap.google_play} src={androidBadge} />
       </Col>
     </Row>
     <Row type="flex" justify="center" align="middle">
@@ -23,11 +28,13 @@ export const Footer = () => (
       </Col>
     </Row>
     <Row type="flex" justify="space-between" align="middle">
-      <Col>©2018 Oh Designie</Col>
       <Col>
-        <a className="link-text-reverse">Terms of use</a>
+        <small>{textMap.copyright}</small>
+      </Col>
+      <Col>
+        <a className="link-text-reverse">{textMap.terms_of_use}</a>
         <span> | </span>
-        <a className="link-text-reverse">Privacy policy</a>
+        <a className="link-text-reverse">{textMap.privacy_policy}</a>
       </Col>
     </Row>
   </Layout.Footer>
