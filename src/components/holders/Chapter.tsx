@@ -5,7 +5,9 @@ export class Chapter extends React.Component {
   render() {
     return (
       <Row className="chapter-container">
-        <Col>{this.props.children}</Col>
+        <Col>
+          <section>{this.props.children}</section>
+        </Col>
       </Row>
     );
   }

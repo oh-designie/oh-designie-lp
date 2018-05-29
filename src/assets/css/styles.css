@@ -1,6 +1,7 @@
 @import '~antd/dist/antd.css';
 
 body {
+  color: #594f8b;
   font-size: 18px;
   text-align: center;
 }
@@ -39,12 +40,23 @@ body {
 
 .xl-text {
   color: #594f8b;
-  font-size: 48px;
+  font-size: 36px;
   text-align: center;
 }
 
 .lg-text {
   color: #594f8b;
-  font-size: 36px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.link-text-reverse {
+  color: #ffffff;
+}
+
+.icon-btn {
+  color: #ffffff;
+  font-size: 24px;
+  margin: 8px;
   text-align: center;
 }
