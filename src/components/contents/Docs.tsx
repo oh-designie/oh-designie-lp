@@ -2,11 +2,16 @@ import * as React from 'react';
 import { Button, Icon } from 'antd';
 
 import { Chapter } from '../';
+import { LocaleType } from '../../locales';
 
-export const Docs = () => (
+interface DocsProps {
+  readonly textMap: LocaleType;
+}
+
+export const Docs = ({ textMap }: DocsProps) => (
   <Chapter>
     <Button type="primary" size="large">
-      documentation
+      {textMap.docs}
       <Icon type="right" />
     </Button>
   </Chapter>

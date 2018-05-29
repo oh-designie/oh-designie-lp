@@ -1,14 +1,19 @@
 import * as React from 'react';
 
 import { Chapter, Heading } from './../';
+import { LocaleType } from '../../locales';
 
-export const About = () => (
-  <Chapter>
-    <Heading size="xl" text="About" />
-    <Heading size="xxl" text="Practice alone or compete with others" />
-    <p>
-      For non-designiers through designiers. Enjoy playing games to acquire
-      fundamental design knowledge and skills.
-    </p>
-  </Chapter>
-);
+interface AboutProps {
+  readonly textMap: LocaleType;
+}
+
+export const About = ({ textMap }: AboutProps) => {
+  const { title, h1, desc } = textMap.contents.about;
+  return (
+    <Chapter>
+      <Heading size="xl" text={title} />
+      <Heading size="xxl" text={h1} />
+      <p>{desc}</p>
+    </Chapter>
+  );
+};
