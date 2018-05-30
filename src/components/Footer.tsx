@@ -14,10 +14,10 @@ export const Footer = ({ textMap }: FooterProps) => (
   <Layout.Footer className="footer">
     <Row gutter={24} type="flex" justify="center" align="middle">
       <Col>
-        <img alt={textMap.app_store} src={iosBadge} />
+        <img alt={textMap.appStore} src={iosBadge} />
       </Col>
       <Col>
-        <img alt={textMap.google_play} src={androidBadge} />
+        <img alt={textMap.googlePlay} src={androidBadge} />
       </Col>
     </Row>
     <Row type="flex" justify="center" align="middle">
@@ -32,9 +32,9 @@ export const Footer = ({ textMap }: FooterProps) => (
         <small>{textMap.copyright}</small>
       </Col>
       <Col>
-        <a className="link-text-reverse">{textMap.terms_of_use}</a>
+        <a className="link-text-reverse">{textMap.termsOfUse}</a>
         <span> | </span>
-        <a className="link-text-reverse">{textMap.privacy_policy}</a>
+        <a className="link-text-reverse">{textMap.privacyPolicy}</a>
       </Col>
     </Row>
   </Layout.Footer>

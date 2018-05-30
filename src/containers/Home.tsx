@@ -2,17 +2,21 @@ import * as React from 'react';
 import { Layout } from 'antd';
 
 import { About, Footer, Docs, Header, Hero, Features } from '../components';
-import { EN_US } from '../locales';
+import { LocaleType } from '../locales';
 
-export const Home = () => (
+interface HomeProps {
+  readonly textMap: LocaleType;
+}
+
+export const Home = ({ textMap }: HomeProps) => (
   <Layout>
-    <Header textMap={EN_US} />
+    <Header textMap={textMap} />
     <Layout.Content>
       <Hero />
-      <About textMap={EN_US} />
-      <Features textMap={EN_US} />
-      <Docs textMap={EN_US} />
+      <About textMap={textMap} />
+      <Features textMap={textMap} />
+      <Docs textMap={textMap} />
     </Layout.Content>
-    <Footer textMap={EN_US} />
+    <Footer textMap={textMap} />
   </Layout>
 );

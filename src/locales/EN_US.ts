@@ -1,10 +1,10 @@
 export const EN_US = {
-  app_title: 'Oh Designie',
+  appTitle: 'Oh Designie',
   download: 'Download',
-  app_store: 'Download on the App Store',
-  google_play: 'Get IT ON Google Play',
-  terms_of_use: 'Terms of use',
-  privacy_policy: 'Privacy policy',
+  appStore: 'Download on the App Store',
+  googlePlay: 'Get IT ON Google Play',
+  termsOfUse: 'Terms of use',
+  privacyPolicy: 'Privacy policy',
   copyright: '©2018 Oh Designie',
   categories: {
     color: 'Color',
@@ -15,8 +15,9 @@ export const EN_US = {
     brightness: 'Brightness',
     differentFont: 'Different font',
     gradient: 'Gradient',
-    majority_case: 'Majority case',
-    majority_shape: 'Majority shape',
+    majorityCase: 'Majority case',
+    majorityShape: 'Majority shape',
+    rectangle: 'Rectangle',
   },
   contents: {
     about: {
