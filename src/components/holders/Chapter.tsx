@@ -1,14 +1,32 @@
 import * as React from 'react';
 import { Col, Row } from 'antd';
 
-export class Chapter extends React.Component {
-  render() {
-    return (
-      <Row className="chapter-container">
-        <Col>
-          <section>{this.props.children}</section>
-        </Col>
-      </Row>
-    );
-  }
+import { colorSet, Styles } from '../../styles';
+
+interface ChapterProps {
+  readonly styles?: Partial<Styles<StyleKey>>;
 }
+
+export const Chapter = ({
+  styles: s = {},
+  children,
+}: ChapterProps & Partial<React.ReactPortal>) => {
+  return (
+    <Row style={{ ...styles.row, ...s.row }} className="chapter-container">
+      <Col>
+        <section>{children}</section>
+      </Col>
+    </Row>
+  );
+};
+
+type StyleKey = 'row';
+const styles: Styles<StyleKey> = {
+  row: {
+    backgroundColor: colorSet.offWhite,
+    paddingTop: '4rem',
+    paddingRight: '2rem',
+    paddingBottom: '4rem',
+    paddingLeft: '2rem',
+  },
+};

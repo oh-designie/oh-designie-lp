@@ -17,10 +17,6 @@ body {
   background: url('../images/bg_pattern.png') repeat;
 }
 
-.chapter-container {
-  margin: 4rem 2rem 3rem;
-}
-
 .footer {
   color: #ffffff;
   background-color: #9a86f0;
@@ -70,4 +66,8 @@ body {
   font-size: 24px;
   margin: 8px;
   text-align: center;
+}
+
+.img-c {
+  margin: 1rem 0.5rem;
 }

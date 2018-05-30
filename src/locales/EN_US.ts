@@ -19,6 +19,10 @@ export const EN_US = {
     majorityShape: 'Majority shape',
     rectangle: 'Rectangle',
   },
+  mode: {
+    competition: 'Competition',
+    practice: 'Practice',
+  },
   contents: {
     about: {
       title: 'About',
