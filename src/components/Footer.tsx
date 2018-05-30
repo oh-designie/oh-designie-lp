@@ -3,8 +3,8 @@ import { Col, Layout, Row } from 'antd';
 
 import { IconButton } from '.';
 import { LocaleType } from '../locales';
-import iosBadge from '../assets/images/en_ios.png';
-import androidBadge from '../assets/images/en_android.png';
+import appStoreBadge from '../assets/images/en_app_store.svg';
+import googlePlayBadge from '../assets/images/en_google_play.svg';
 
 interface FooterProps {
   readonly textMap: LocaleType;
@@ -12,12 +12,12 @@ interface FooterProps {
 
 export const Footer = ({ textMap }: FooterProps) => (
   <Layout.Footer className="footer">
-    <Row gutter={24} type="flex" justify="center" align="middle">
+    <Row gutter={8} type="flex" justify="center" align="middle">
       <Col>
-        <img alt={textMap.appStore} src={iosBadge} />
+        <img height="40" alt={textMap.appStore} src={appStoreBadge} />
       </Col>
       <Col>
-        <img alt={textMap.googlePlay} src={androidBadge} />
+        <img height="40" alt={textMap.googlePlay} src={googlePlayBadge} />
       </Col>
     </Row>
     <Row type="flex" justify="center" align="middle">
