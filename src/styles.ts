@@ -8,6 +8,11 @@ export const colorMap: Record<ColorKey, string> = {
   shadow: 'rgba(89, 79, 139, 0.3)',
 };
 
+type HeightKey = 'hero';
+export const heightMap: Record<HeightKey, string> = {
+  hero: '640px',
+};
+
 export const baseSpace: number = 16;
 type SpaceKey = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 export const spaceMap: Record<SpaceKey, string> = {
