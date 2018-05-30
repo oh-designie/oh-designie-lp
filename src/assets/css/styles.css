@@ -9,10 +9,6 @@ body {
   text-align: center;
 }
 
-.header {
-  background-color: #9a86f0;
-}
-
 .pat-container {
   background: url('../images/bg_pattern.png') repeat;
 }
