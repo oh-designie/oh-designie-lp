@@ -11,7 +11,7 @@ export const Header = ({ textMap }: HeaderProps) => (
   <Layout.Header className="header">
     <Row type="flex" justify="space-between" align="middle">
       <Col>
-        <a className="logo">{textMap.app_title}</a>
+        <a className="logo">{textMap.appTitle}</a>
       </Col>
       <Col>
         <Button ghost>{textMap.download}</Button>
