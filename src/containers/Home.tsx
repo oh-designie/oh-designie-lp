@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Layout } from 'antd';
+import { Affix, Layout } from 'antd';
 
 import { About, Footer, Docs, Header, Hero, Features } from '../components';
 import { LocaleType } from '../locales';
@@ -10,7 +10,9 @@ interface HomeProps {
 
 export const Home = ({ textMap }: HomeProps) => (
   <Layout>
-    <Header textMap={textMap} />
+    <Affix>
+      <Header textMap={textMap} />
+    </Affix>
     <Layout.Content>
       <Hero />
       <About textMap={textMap} />

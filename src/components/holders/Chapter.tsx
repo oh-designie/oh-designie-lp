@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Col, Row } from 'antd';
 
-import { colorSet, Styles } from '../../styles';
+import { colorMap, Styles } from '../../styles';
 
 interface ChapterProps {
   readonly styles?: Partial<Styles<StyleKey>>;
@@ -23,7 +23,7 @@ export const Chapter = ({
 type StyleKey = 'row';
 const styles: Styles<StyleKey> = {
   row: {
-    backgroundColor: colorSet.offWhite,
+    backgroundColor: colorMap.offWhite,
     paddingTop: '4rem',
     paddingRight: '2rem',
     paddingBottom: '4rem',

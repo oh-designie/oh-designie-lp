@@ -3,7 +3,7 @@ import { Col, Row } from 'antd';
 
 import { Chapter, Heading } from './../';
 import { LocaleType } from '../../locales';
-import { colorSet, Styles } from '../../styles';
+import { colorMap, Styles } from '../../styles';
 
 import competitionIcon from '../../assets/images/icons/competition.svg';
 import practiceIcon from '../../assets/images/icons/practice.svg';
@@ -19,7 +19,7 @@ export const Features = ({ textMap }: FeaturesProps) => {
   const { title, h1, section1, section2 } = textMap.contents.features;
   const { color, font, layout } = textMap.categories;
   const { competition, practice } = textMap.mode;
-  const styles: Styles = { row: { backgroundColor: colorSet.white } };
+  const styles: Styles = { row: { backgroundColor: colorMap.white } };
   return (
     <Chapter styles={styles}>
       <Heading size="xl" text={title} />
