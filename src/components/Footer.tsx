@@ -1,8 +1,16 @@
 import * as React from 'react';
 import { Col, Layout, Row } from 'antd';
 
-import { IconButton } from '.';
+import { IconButton, Link } from '.';
 import { LocaleType } from '../locales';
+import {
+  colorMap,
+  fontSizeMap,
+  fontFamilyMap,
+  spaceMap,
+  Styles,
+} from '../styles';
+
 import appStoreBadge from '../assets/images/en_app_store.svg';
 import googlePlayBadge from '../assets/images/en_google_play.svg';
 
@@ -11,8 +19,14 @@ interface FooterProps {
 }
 
 export const Footer = ({ textMap }: FooterProps) => (
-  <Layout.Footer className="footer">
-    <Row gutter={8} type="flex" justify="center" align="middle">
+  <Layout.Footer style={styles.footer}>
+    <Row
+      style={styles.content}
+      gutter={16}
+      type="flex"
+      justify="center"
+      align="middle"
+    >
       <Col>
         <img height="40" alt={textMap.appStore} src={appStoreBadge} />
       </Col>
@@ -20,7 +34,7 @@ export const Footer = ({ textMap }: FooterProps) => (
         <img height="40" alt={textMap.googlePlay} src={googlePlayBadge} />
       </Col>
     </Row>
-    <Row type="flex" justify="center" align="middle">
+    <Row style={styles.content} type="flex" justify="center" align="middle">
       <Col>
         <IconButton href="" type="github" />
         <IconButton href="" type="instagram" />
@@ -32,10 +46,23 @@ export const Footer = ({ textMap }: FooterProps) => (
         <small>{textMap.copyright}</small>
       </Col>
       <Col>
-        <a className="link-text-reverse">{textMap.termsOfUse}</a>
+        <Link href="/" text={textMap.termsOfUse} />
         <span> | </span>
-        <a className="link-text-reverse">{textMap.privacyPolicy}</a>
+        <Link href="/" text={textMap.privacyPolicy} />
       </Col>
     </Row>
   </Layout.Footer>
 );
+
+type StyleKey = 'footer' | 'content';
+const styles: Styles<StyleKey> = {
+  footer: {
+    fontFamily: fontFamilyMap.body,
+    backgroundColor: colorMap.primary,
+    color: colorMap.translucent,
+    fontSize: fontSizeMap.sm,
+  },
+  content: {
+    marginTop: spaceMap.xxl,
+  },
+};

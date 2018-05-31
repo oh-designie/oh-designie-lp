@@ -47,6 +47,6 @@ export const EN_US = {
       },
     },
   },
-  docs: 'See documentation',
+  docs: 'See Game guide',
 };
 export type LocaleType = typeof EN_US;

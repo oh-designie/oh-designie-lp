@@ -33,7 +33,13 @@ export const Features = ({ textMap }: FeaturesProps) => {
       <section style={styles.section}>
         <Heading text={section1.title} />
         <p>{section1.desc}</p>
-        <Row style={styles.imgContainer} gutter={24}>
+        <Row
+          style={styles.imgContainer}
+          gutter={24}
+          type="flex"
+          justify="space-around"
+          align="middle"
+        >
           <Col span={12}>
             <List
               size="large"
@@ -52,7 +58,7 @@ export const Features = ({ textMap }: FeaturesProps) => {
               dataSource={['2 Players', '3 Games', 'Consume 1 life']}
               renderItem={(str: string) => (
                 <List.Item>
-                  <text style={styles.listText}>{str}</text>
+                  <p style={styles.listText}>{str}</p>
                 </List.Item>
               )}
             />
@@ -75,7 +81,7 @@ export const Features = ({ textMap }: FeaturesProps) => {
               dataSource={['1 Player', '1 Game', 'No life needed']}
               renderItem={(str: string) => (
                 <List.Item>
-                  <text style={styles.listText}>{str}</text>
+                  <p style={styles.listText}>{str}</p>
                 </List.Item>
               )}
             />
@@ -157,6 +163,7 @@ const styles: Styles<StyleKey> = {
     fontFamily: fontFamilyMap.title,
     fontSize: fontSizeMap.xs,
     fontWeight: 300,
+    margin: 0,
     textAlign: 'center',
     width: '100%',
   },
