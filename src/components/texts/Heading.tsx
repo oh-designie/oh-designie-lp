@@ -1,11 +1,44 @@
 import * as React from 'react';
 
+import {
+  colorMap,
+  fontFamilyMap,
+  fontSizeMap,
+  sizeKey,
+  Styles,
+} from '../../styles';
+
 interface HeadingProps {
-  readonly size?: string;
+  readonly size?: sizeKey;
   readonly text: string;
 }
 
-export const Heading = ({ size = 'lg', text }: HeadingProps) => {
-  const dom: string = size === 'xxl' ? 'h1' : size === 'xl' ? 'h2' : 'h3';
-  return React.createElement(dom, { className: `${size}-text` }, text);
+export const Heading = ({ size = 'md', text }: HeadingProps) => {
+  const dom: string = size === 'xl' ? 'h1' : size === 'lg' ? 'h2' : 'h3';
+  const style = { ...styles.base, ...styles[size] };
+  return React.createElement(dom, { style }, text);
+};
+
+type StyleKey = 'base' | 'md' | 'lg' | 'xl';
+const styles: Styles<StyleKey> = {
+  base: {
+    fontFamily: fontFamilyMap.title,
+    fontWeight: 700,
+    textAlign: 'center',
+  },
+  md: {
+    color: colorMap.primaryDark,
+    fontSize: fontSizeMap.md,
+    marginBottom: fontSizeMap.xs,
+  },
+  lg: {
+    color: colorMap.primaryDark,
+    fontSize: fontSizeMap.lg,
+    marginBottom: fontSizeMap.lg,
+  },
+  xl: {
+    color: colorMap.primaryDarker,
+    fontSize: fontSizeMap.xl,
+    lineHeight: fontSizeMap.xxl,
+  },
 };

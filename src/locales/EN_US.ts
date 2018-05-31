@@ -36,13 +36,13 @@ export const EN_US = {
       section1: {
         title: '1. Game mode',
         desc:
-          'There are 2 game mode. Practice mode to play each game only you,' +
+          'There are 2 game mode. Practice mode to play each game only you, ' +
           'and Competition mode to play with other players.',
       },
       section2: {
         title: '2. Categories',
         desc:
-          'Every game belongs to one of the 3 categories below.' +
+          'Every game belongs to one of the 3 categories below. ' +
           'Color game icons are pink, fonts are bule, and layouts are orange so it is easy to know.',
       },
     },

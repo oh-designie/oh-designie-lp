@@ -1,48 +1,18 @@
 @import '~antd/dist/antd.css';
-@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700|Open+Sans:400,600');
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700|Open+Sans:300');
 
 body {
   color: #594f8b;
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 300;
+  line-height: 1.8rem;
   text-align: center;
 }
 
 .footer {
   color: #ffffff;
   background-color: #9a86f0;
-}
-
-.logo {
-  color: #ffffff;
-  font-family: 'Nunito', 'Open Sans', sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.xxl-text {
-  color: #8674d6;
-  font-family: 'Nunito', 'Open Sans', sans-serif;
-  font-size: 60px;
-  font-weight: 700;
-  text-align: center;
-}
-
-.xl-text {
-  color: #594f8b;
-  font-family: 'Nunito', 'Open Sans', sans-serif;
-  font-size: 36px;
-  font-weight: 700;
-  text-align: center;
-}
-
-.lg-text {
-  color: #594f8b;
-  font-family: 'Nunito', 'Open Sans', sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  text-align: center;
 }
 
 .link-text-reverse {
@@ -54,8 +24,4 @@ body {
   font-size: 24px;
   margin: 8px;
   text-align: center;
-}
-
-.img-c {
-  margin: 1rem 0.5rem;
 }
