@@ -4,6 +4,7 @@ type ColorKey =
   | 'white'
   | 'offWhite'
   | 'ash'
+  | 'translucent'
   | 'primary'
   | 'primaryDarker'
   | 'primaryDark'
@@ -12,6 +13,7 @@ export const colorMap: Record<ColorKey, string> = {
   white: '#ffffff',
   offWhite: '#fafafa',
   ash: '#d9d9d9',
+  translucent: 'rgba(255, 255, 255, 0.6)',
   primary: '#9a86f0',
   primaryDarker: '#8674d6',
   primaryDark: '#594f8b',
