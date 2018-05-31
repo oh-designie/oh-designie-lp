@@ -40,10 +40,10 @@ export const lengthMap: Record<LengthKey, string> = {
   hero: '640px',
 };
 
-export type sizeKey = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+export type SizeKey = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 
 export const baseSpace: number = 16;
-export const spaceMap: Record<sizeKey, string> = {
+export const spaceMap: Record<SizeKey, string> = {
   xs: `${baseSpace * 0.25}px`,
   sm: `${baseSpace * 0.5}px`,
   md: `${baseSpace}px`,
@@ -53,7 +53,7 @@ export const spaceMap: Record<sizeKey, string> = {
 };
 
 export const baseFontSize: number = 24;
-export const fontSizeMap: Record<sizeKey, string> = {
+export const fontSizeMap: Record<SizeKey, string> = {
   xs: `${baseFontSize * 0.5 + 2}px`,
   sm: `${baseFontSize * 0.75}px`,
   md: `${baseFontSize}px`,

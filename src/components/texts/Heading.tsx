@@ -1,15 +1,9 @@
 import * as React from 'react';
 
-import {
-  colorMap,
-  fontFamilyMap,
-  fontSizeMap,
-  sizeKey,
-  Styles,
-} from '../../styles';
+import { colorMap, fontFamilyMap, fontSizeMap, Styles } from '../../styles';
 
 interface HeadingProps {
-  readonly size?: sizeKey;
+  readonly size?: SizeKey;
   readonly text: string;
 }
 
@@ -19,7 +13,8 @@ export const Heading = ({ size = 'md', text }: HeadingProps) => {
   return React.createElement(dom, { style }, text);
 };
 
-type StyleKey = 'base' | 'md' | 'lg' | 'xl';
+type SizeKey = 'md' | 'lg' | 'xl';
+type StyleKey = 'base' | SizeKey;
 const styles: Styles<StyleKey> = {
   base: {
     fontFamily: fontFamilyMap.title,
