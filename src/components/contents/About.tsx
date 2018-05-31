@@ -3,6 +3,8 @@ import { Col, Row } from 'antd';
 
 import { Chapter, Heading } from './../';
 import { LocaleType } from '../../locales';
+import { lengthMap, spaceMap, Styles } from '../../styles';
+
 import colorIcon from '../../assets/images/categories/color.svg';
 import fontIcon from '../../assets/images/categories/font.svg';
 import layoutIcon from '../../assets/images/categories/layout.svg';
@@ -16,16 +18,47 @@ export const About = ({ textMap }: AboutProps) => {
   const { color, font, layout } = textMap.categories;
   return (
     <Chapter>
-      <Heading size="xl" text={title} />
-      <Heading size="xxl" text={h1} />
+      <Heading size="lg" text={title} />
+      <Heading size="xl" text={h1} />
       <p>{desc}</p>
-      <Row type="flex" justify="center" align="middle">
+      <Row
+        style={styles.imgContainer}
+        type="flex"
+        justify="center"
+        align="middle"
+      >
         <Col>
-          <img className="img-c" height="100" alt={color} src={colorIcon} />
-          <img className="img-c" height="100" alt={font} src={fontIcon} />
-          <img className="img-c" height="100" alt={layout} src={layoutIcon} />
+          <img
+            style={styles.img}
+            height={lengthMap.categoryIcon}
+            alt={color}
+            src={colorIcon}
+          />
+          <img
+            style={styles.img}
+            height={lengthMap.categoryIcon}
+            alt={font}
+            src={fontIcon}
+          />
+          <img
+            style={styles.img}
+            height={lengthMap.categoryIcon}
+            alt={layout}
+            src={layoutIcon}
+          />
         </Col>
       </Row>
     </Chapter>
   );
+};
+
+type StyleKey = 'img' | 'imgContainer';
+const styles: Styles<StyleKey> = {
+  img: {
+    marginRight: spaceMap.sm,
+    marginLeft: spaceMap.sm,
+  },
+  imgContainer: {
+    marginTop: spaceMap.xl,
+  },
 };

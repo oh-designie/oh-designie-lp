@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Col, Row } from 'antd';
 
-import { colorMap, heightMap, spaceMap, Styles } from '../../styles';
+import { colorMap, lengthMap, spaceMap, Styles } from '../../styles';
 
 import pattern from '../../assets/images/bg_pattern.png';
 import smartphone from '../../assets/images/hero_smartphone.svg';
@@ -20,7 +20,7 @@ const styles: Styles<StyleKey> = {
     backgroundColor: colorMap.white,
     backgroundImage: `url(${pattern})`,
     backgroundRepeat: 'repeat',
-    height: heightMap.hero,
+    height: lengthMap.hero,
   },
   img: {
     marginTop: spaceMap.sm,
