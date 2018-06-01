@@ -1,10 +1,12 @@
 export type Styles<S extends string = string> = Record<S, React.CSSProperties>;
+export type ButtonStyle = 'default' | 'ghost';
 
 type ColorKey =
   | 'white'
   | 'offWhite'
   | 'ash'
   | 'translucent'
+  | 'primaryLighter'
   | 'primary'
   | 'primaryDarker'
   | 'primaryDark'
@@ -14,6 +16,7 @@ export const colorMap: Record<ColorKey, string> = {
   offWhite: '#fafafa',
   ash: '#d9d9d9',
   translucent: 'rgba(255, 255, 255, 0.6)',
+  primaryLighter: '#afa0f3',
   primary: '#9a86f0',
   primaryDarker: '#8674d6',
   primaryDark: '#594f8b',

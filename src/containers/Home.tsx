@@ -3,13 +3,14 @@ import { Affix, Layout } from 'antd';
 
 import { About, Footer, Docs, Header, Hero, Features } from '../components';
 import { LocaleType } from '../locales';
+import { colorMap, fontFamilyMap, fontSizeMap, Styles } from '../styles';
 
 interface HomeProps {
   readonly textMap: LocaleType;
 }
 
 export const Home = ({ textMap }: HomeProps) => (
-  <Layout>
+  <Layout style={styles.container}>
     <Affix>
       <Header textMap={textMap} />
     </Affix>
@@ -22,3 +23,15 @@ export const Home = ({ textMap }: HomeProps) => (
     <Footer textMap={textMap} />
   </Layout>
 );
+
+type StyleKey = 'container';
+const styles: Styles<StyleKey> = {
+  container: {
+    color: colorMap.primaryDark,
+    fontFamily: fontFamilyMap.body,
+    fontSize: fontSizeMap.sm,
+    fontWeight: 300,
+    lineHeight: fontSizeMap.lg,
+    textAlign: 'center',
+  },
+};
