@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Icon } from 'antd';
+import { pure } from 'recompose';
 
 import { Button, Chapter } from '../';
 import { LocaleType } from '../../locales';
@@ -9,14 +10,14 @@ interface DocsProps {
   readonly textMap: LocaleType;
 }
 
-export const Docs = ({ textMap }: DocsProps) => (
+export const Docs = pure(({ textMap }: DocsProps) => (
   <Chapter>
     <Button>
       {textMap.docs}
       <Icon style={styles.btnIcon} type="right" />
     </Button>
   </Chapter>
-);
+));
 
 type StyleKey = 'btnIcon';
 const styles: Styles<StyleKey> = {

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Col, Row } from 'antd';
+import { pure } from 'recompose';
 
 import {
   colorMap,
@@ -13,18 +14,17 @@ interface ChapterProps {
   readonly styles?: Partial<Styles<StyleKey>>;
 }
 
-export const Chapter = ({
-  styles: s = {},
-  children,
-}: ChapterProps & Partial<React.ReactPortal>) => {
-  return (
-    <Row style={{ ...styles.row, ...s.row }}>
-      <Col>
-        <section style={styles.content}>{children}</section>
-      </Col>
-    </Row>
-  );
-};
+export const Chapter = pure(
+  ({ styles: s = {}, children }: ChapterProps & Partial<React.ReactPortal>) => {
+    return (
+      <Row style={{ ...styles.row, ...s.row }}>
+        <Col>
+          <section style={styles.content}>{children}</section>
+        </Col>
+      </Row>
+    );
+  },
+);
 
 type StyleKey = 'row' | 'content';
 const styles: Styles<StyleKey> = {

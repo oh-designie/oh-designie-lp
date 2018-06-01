@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Col, Row } from 'antd';
+import { pure } from 'recompose';
 
 import { Chapter, Heading } from './../';
 import { LocaleType } from '../../locales';
@@ -13,7 +14,7 @@ interface AboutProps {
   readonly textMap: LocaleType;
 }
 
-export const About = ({ textMap }: AboutProps) => {
+export const About = pure(({ textMap }: AboutProps) => {
   const { title, h1, desc } = textMap.contents.about;
   const { color, font, layout } = textMap.categories;
   return (
@@ -50,7 +51,7 @@ export const About = ({ textMap }: AboutProps) => {
       </Row>
     </Chapter>
   );
-};
+});
 
 type StyleKey = 'img' | 'imgContainer';
 const styles: Styles<StyleKey> = {
