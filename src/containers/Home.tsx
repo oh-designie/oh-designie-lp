@@ -27,6 +27,7 @@ export const Home = ({ textMap }: HomeProps) => (
 type StyleKey = 'container';
 const styles: Styles<StyleKey> = {
   container: {
+    backgroundColor: colorMap.offWhite,
     color: colorMap.primaryDark,
     fontFamily: fontFamilyMap.body,
     fontSize: fontSizeMap.sm,

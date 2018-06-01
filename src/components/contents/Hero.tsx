@@ -7,14 +7,16 @@ import pattern from '../../assets/images/bg_pattern.png';
 import smartphone from '../../assets/images/hero_smartphone.svg';
 
 export const Hero = () => (
-  <Row style={styles.container} type="flex" justify="center" align="top">
-    <Col md={16} lg={12}>
-      <img style={styles.img} src={smartphone} />
-    </Col>
-  </Row>
+  <div style={styles.hero}>
+    <Row style={styles.container} type="flex" justify="center" align="top">
+      <Col md={16} lg={12}>
+        <img style={styles.img} src={smartphone} />
+      </Col>
+    </Row>
+  </div>
 );
 
-type StyleKey = 'container' | 'img';
+type StyleKey = 'container' | 'hero' | 'img';
 const styles: Styles<StyleKey> = {
   container: {
     backgroundColor: colorMap.white,
@@ -25,5 +27,8 @@ const styles: Styles<StyleKey> = {
   img: {
     marginTop: spaceMap.sm,
     maxWidth: '100%',
+  },
+  hero: {
+    clipPath: `circle(${lengthMap.heroCircle} at 50% -400%)`,
   },
 };

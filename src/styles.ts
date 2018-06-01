@@ -35,14 +35,20 @@ type LengthKey =
   | 'chapter'
   | 'categoryIcon'
   | 'categoryImg'
-  | 'hero';
+  | 'footerCircle'
+  | 'footerTop'
+  | 'hero'
+  | 'heroCircle';
 export const lengthMap: Record<LengthKey, string> = {
   border: '1px',
   borderRadius: '4px',
   chapter: '960px',
   categoryIcon: '100px',
   categoryImg: '180px',
+  footerCircle: '2000px',
+  footerTop: '54px',
   hero: '640px',
+  heroCircle: '3200px',
 };
 
 export type SizeKey = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
