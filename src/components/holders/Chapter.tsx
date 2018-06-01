@@ -36,7 +36,7 @@ const styles: Styles<StyleKey> = {
     paddingLeft: spaceMap.lg,
   },
   content: {
-    maxWidth: lengthMap.chapter,
+    maxWidth: lengthMap.chapterMax,
     margin: 'auto',
   },
 };
