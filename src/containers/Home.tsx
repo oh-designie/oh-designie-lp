@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Affix, Layout } from 'antd';
+import { pure } from 'recompose';
 
 import { About, Footer, Docs, Header, Hero, Features } from '../components';
 import { LocaleType } from '../locales';
@@ -15,7 +16,7 @@ interface HomeProps {
   readonly textMap: LocaleType;
 }
 
-export const Home = ({ textMap }: HomeProps) => (
+const Home = pure(({ textMap }: HomeProps) => (
   <Layout style={styles.container}>
     <Affix>
       <Header textMap={textMap} />
@@ -28,7 +29,9 @@ export const Home = ({ textMap }: HomeProps) => (
     </Layout.Content>
     <Footer textMap={textMap} />
   </Layout>
-);
+));
+
+export { Home };
 
 type StyleKey = 'container';
 const styles: Styles<StyleKey> = {

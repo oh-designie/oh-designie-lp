@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Col, Layout, Row } from 'antd';
+import { pure } from 'recompose';
 
 import { IconButton, Link } from '.';
 import { LocaleType } from '../locales';
@@ -19,7 +20,7 @@ interface FooterProps {
   readonly textMap: LocaleType;
 }
 
-export const Footer = ({ textMap }: FooterProps) => (
+export const Footer = pure(({ textMap }: FooterProps) => (
   <div style={styles.footer}>
     <Layout.Footer style={styles.container}>
       <Row
@@ -60,7 +61,7 @@ export const Footer = ({ textMap }: FooterProps) => (
       </Row>
     </Layout.Footer>
   </div>
-);
+));
 
 type StyleKey = 'container' | 'content' | 'footer' | 'links';
 const styles: Styles<StyleKey> = {

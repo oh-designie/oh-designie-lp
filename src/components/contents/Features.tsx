@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Col, List, Row } from 'antd';
+import { pure } from 'recompose';
 
 import { Chapter, Heading } from './../';
 import { LocaleType } from '../../locales';
@@ -22,7 +23,7 @@ interface FeaturesProps {
   readonly textMap: LocaleType;
 }
 
-export const Features = ({ textMap }: FeaturesProps) => {
+export const Features = pure(({ textMap }: FeaturesProps) => {
   const { title, h1, section1, section2 } = textMap.contents.features;
   const { color, font, layout } = textMap.categories;
   const { competition, practice } = textMap.mode;
@@ -127,7 +128,7 @@ export const Features = ({ textMap }: FeaturesProps) => {
       </section>
     </Chapter>
   );
-};
+});
 
 type StyleKey =
   | 'caption'
