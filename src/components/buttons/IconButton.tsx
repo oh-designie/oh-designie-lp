@@ -9,36 +9,34 @@ interface IconButtonProps {
 }
 
 interface IconButtonState {
-  readonly hover: string;
+  readonly hover: boolean;
 }
 
 export class IconButton extends React.Component<
   IconButtonProps,
   IconButtonState
 > {
-  state = {
-    hover: '',
-  };
+  state = { hover: false };
 
   render() {
     const { href = '', type } = this.props;
-    const textStyle: React.CSSProperties =
-      this.state.hover === type ? styles.over : styles.out;
+    const { hover } = this.state;
+    const textStyle: React.CSSProperties = hover ? styles.over : styles.out;
     return (
       <a
         style={textStyle}
         href={href}
-        onMouseOver={() => this.handleHover(type)}
-        onMouseOut={() => this.handleHover('')}
+        onMouseOver={this.onMouseOver}
+        onMouseOut={this.onMouseOut}
       >
         <Icon style={styles.icon} type={type} />
       </a>
     );
   }
 
-  private handleHover(hover: string): void {
-    this.setState({ hover });
-  }
+  private onMouseOver = () => this.setState({ hover: true });
+
+  private onMouseOut = () => this.setState({ hover: false });
 }
 
 type StyleKey = 'icon' | 'out' | 'over';

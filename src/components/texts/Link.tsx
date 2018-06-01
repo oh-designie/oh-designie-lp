@@ -8,32 +8,30 @@ interface LinkProps {
 }
 
 interface LinkState {
-  readonly hover: string;
+  readonly hover: boolean;
 }
 
 export class Link extends React.Component<LinkProps, LinkState> {
-  state = {
-    hover: '',
-  };
+  state = { hover: false };
 
   render() {
     const { href = '', text } = this.props;
-    const style = this.state.hover === text ? styles.over : styles.out;
+    const style = this.state.hover ? styles.over : styles.out;
     return (
       <a
         style={{ ...styles.base, ...style }}
         href={href}
-        onMouseOver={() => this.handleHover(text)}
-        onMouseOut={() => this.handleHover('')}
+        onMouseOver={this.onMouseOver}
+        onMouseOut={this.onMouseOut}
       >
         {text}
       </a>
     );
   }
 
-  private handleHover(hover: string): void {
-    this.setState({ hover });
-  }
+  private onMouseOver = () => this.setState({ hover: true });
+
+  private onMouseOut = () => this.setState({ hover: false });
 }
 
 type StyleKey = 'base' | 'out' | 'over';
