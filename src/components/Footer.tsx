@@ -80,6 +80,6 @@ const styles: Styles<StyleKey> = {
     marginTop: spaceMap.xs,
     marginRight: 'auto',
     marginLeft: 'auto',
-    maxWidth: lengthMap.chapter,
+    maxWidth: lengthMap.chapterMax,
   },
 };

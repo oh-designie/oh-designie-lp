@@ -3,7 +3,13 @@ import { Affix, Layout } from 'antd';
 
 import { About, Footer, Docs, Header, Hero, Features } from '../components';
 import { LocaleType } from '../locales';
-import { colorMap, fontFamilyMap, fontSizeMap, Styles } from '../styles';
+import {
+  colorMap,
+  fontFamilyMap,
+  fontSizeMap,
+  lengthMap,
+  Styles,
+} from '../styles';
 
 interface HomeProps {
   readonly textMap: LocaleType;
@@ -33,6 +39,7 @@ const styles: Styles<StyleKey> = {
     fontSize: fontSizeMap.sm,
     fontWeight: 300,
     lineHeight: fontSizeMap.lg,
+    minWidth: lengthMap.minWidth,
     textAlign: 'center',
   },
 };

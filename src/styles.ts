@@ -32,23 +32,25 @@ export const fontFamilyMap: Record<FontFamilyKey, string> = {
 type LengthKey =
   | 'border'
   | 'borderRadius'
-  | 'chapter'
+  | 'chapterMax'
   | 'categoryIcon'
   | 'categoryImg'
   | 'footerCircle'
   | 'footerTop'
   | 'hero'
-  | 'heroCircle';
+  | 'heroCircle'
+  | 'minWidth';
 export const lengthMap: Record<LengthKey, string> = {
   border: '1px',
   borderRadius: '4px',
-  chapter: '960px',
+  chapterMax: '960px',
   categoryIcon: '100px',
   categoryImg: '180px',
   footerCircle: '2000px',
   footerTop: '54px',
   hero: '640px',
   heroCircle: '3200px',
+  minWidth: '420px',
 };
 
 export type SizeKey = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';

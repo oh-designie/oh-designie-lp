@@ -56,6 +56,7 @@ const styles: Styles<StyleKey> = {
     fontFamily: fontFamilyMap.title,
     fontSize: fontSizeMap.sm,
     fontWeight: 400,
+    outline: 'none',
     paddingTop: spaceMap.sm,
     paddingRight: spaceMap.lg,
     paddingBottom: spaceMap.sm,
