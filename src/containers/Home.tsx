@@ -16,20 +16,22 @@ interface HomeProps {
   readonly textMap: LocaleType;
 }
 
-const Home = pure(({ textMap }: HomeProps) => (
-  <Layout style={styles.container}>
-    <Affix>
-      <Header textMap={textMap} />
-    </Affix>
-    <Layout.Content>
-      <Hero />
-      <About textMap={textMap} />
-      <Features textMap={textMap} />
-      <Docs textMap={textMap} />
-    </Layout.Content>
-    <Footer textMap={textMap} />
-  </Layout>
-));
+const Home = pure(({ textMap }: HomeProps) => {
+  return (
+    <Layout style={styles.container}>
+      <Affix>
+        <Header textMap={textMap} />
+      </Affix>
+      <Layout.Content>
+        <Hero />
+        <About textMap={textMap} />
+        <Features textMap={textMap} />
+        <Docs textMap={textMap} />
+      </Layout.Content>
+      <Footer textMap={textMap} />
+    </Layout>
+  );
+});
 
 export { Home };
 

@@ -6,11 +6,7 @@ export const EN_US = {
   termsOfUse: 'Terms of use',
   privacyPolicy: 'Privacy policy',
   copyright: '©2018 Oh Designie',
-  categories: {
-    color: 'Color',
-    font: 'Font',
-    layout: 'Layout',
-  },
+  categories: { color: 'Color', font: 'Font', layout: 'Layout' },
   games: {
     brightness: 'Brightness',
     differentFont: 'Different font',
@@ -19,10 +15,7 @@ export const EN_US = {
     majorityShape: 'Majority shape',
     rectangle: 'Rectangle',
   },
-  mode: {
-    competition: 'Competition',
-    practice: 'Practice',
-  },
+  mode: { competition: 'Competition', practice: 'Practice' },
   contents: {
     about: {
       title: 'About',
