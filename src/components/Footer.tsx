@@ -16,6 +16,10 @@ import {
 import appStoreBadge from '../assets/images/en_app_store.svg';
 import googlePlayBadge from '../assets/images/en_google_play.svg';
 
+const githubUrl: string = 'https://github.com/oh-designie';
+const twitterUrl: string = 'https://twitter.com/OhDesignie';
+const instagramUrl: string = 'https://instagram.com/ohdesignie';
+
 interface FooterProps {
   readonly textMap: LocaleType;
 }
@@ -39,9 +43,9 @@ export const Footer = pure(({ textMap }: FooterProps) => (
       </Row>
       <Row style={styles.content} type="flex" justify="center" align="middle">
         <Col>
-          <IconButton href="" type="github" />
-          <IconButton href="" type="instagram" />
-          <IconButton href="" type="twitter" />
+          <IconButton href={githubUrl} type="github" />
+          <IconButton href={instagramUrl} type="instagram" />
+          <IconButton href={twitterUrl} type="twitter" />
         </Col>
       </Row>
       <Row
