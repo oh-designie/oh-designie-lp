@@ -50,7 +50,7 @@ export const lengthMap: Record<LengthKey, string> = {
   footerTop: '54px',
   hero: '640px',
   heroCircle: '3200px',
-  minWidth: '420px',
+  minWidth: '320px',
 };
 
 export type SizeKey = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';

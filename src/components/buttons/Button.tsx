@@ -50,6 +50,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
 type StyleKey = 'base' | 'default' | 'ghost' | 'over' | 'out';
 const styles: Styles<StyleKey> = {
   base: {
+    appearance: 'none',
     borderRadius: lengthMap.borderRadius,
     boxShadow: `0 ${spaceMap.xs} ${spaceMap.sm} ${colorMap.shadow}`,
     color: colorMap.white,

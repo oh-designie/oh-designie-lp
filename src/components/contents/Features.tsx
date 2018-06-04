@@ -94,11 +94,12 @@ export const Features = pure(({ textMap }: FeaturesProps) => {
         <p>{section2.desc}</p>
         <Row
           style={styles.imgContainer}
+          gutter={16}
           type="flex"
           justify="space-around"
           align="middle"
         >
-          <Col>
+          <Col xs={24} sm={8}>
             <figure style={styles.img}>
               <img
                 height={lengthMap.categoryIcon}
@@ -108,13 +109,13 @@ export const Features = pure(({ textMap }: FeaturesProps) => {
               <figcaption style={styles.caption}>{color}</figcaption>
             </figure>
           </Col>
-          <Col>
+          <Col xs={24} sm={8}>
             <figure style={styles.img}>
               <img height={lengthMap.categoryIcon} alt={font} src={fontIcon} />
               <figcaption style={styles.caption}>{font}</figcaption>
             </figure>
           </Col>
-          <Col>
+          <Col xs={24} sm={8}>
             <figure style={styles.img}>
               <img
                 height={lengthMap.categoryIcon}
@@ -157,6 +158,10 @@ const styles: Styles<StyleKey> = {
     borderRadius: lengthMap.borderRadius,
     height: lengthMap.categoryImg,
     paddingTop: spaceMap.lg,
+    marginTop: spaceMap.sm,
+    marginRight: 'auto',
+    marginBottom: spaceMap.sm,
+    marginLeft: 'auto',
     width: lengthMap.categoryImg,
   },
   listText: {
