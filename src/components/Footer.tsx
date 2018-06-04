@@ -24,51 +24,69 @@ interface FooterProps {
   readonly textMap: LocaleType;
 }
 
-export const Footer = pure(({ textMap }: FooterProps) => (
-  <div style={styles.footer}>
-    <Layout.Footer style={styles.container}>
-      <Row
-        style={styles.content}
-        gutter={16}
-        type="flex"
-        justify="center"
-        align="middle"
-      >
-        <Col>
-          <img height="40" alt={textMap.appStore} src={appStoreBadge} />
-        </Col>
-        <Col>
-          <img height="40" alt={textMap.googlePlay} src={googlePlayBadge} />
-        </Col>
-      </Row>
-      <Row style={styles.content} type="flex" justify="center" align="middle">
-        <Col>
-          <IconButton href={githubUrl} type="github" />
-          {/* <IconButton href={instagramUrl} type="instagram" /> */}
-          <IconButton href={twitterUrl} type="twitter" />
-        </Col>
-      </Row>
-      <Row
-        style={styles.links}
-        type="flex"
-        justify="space-between"
-        align="middle"
-      >
-        <Col>
-          <small>{textMap.copyright}</small>
-        </Col>
-        <Col>
-          <Link href="/" text={textMap.termsOfUse} />
-          <span> | </span>
-          <Link href="/" text={textMap.privacyPolicy} />
-        </Col>
-      </Row>
-    </Layout.Footer>
-  </div>
-));
+export const Footer = pure(({ textMap }: FooterProps) => {
+  const footerStyle = window.matchMedia('(max-width: 576)').matches
+    ? styles.footer
+    : styles.footerXs;
+  return (
+    <div style={footerStyle}>
+      <Layout.Footer style={styles.container}>
+        <Row style={styles.content} type="flex" justify="center" align="middle">
+          <Col>
+            <img
+              style={styles.badge}
+              height="40"
+              alt={textMap.appStore}
+              src={appStoreBadge}
+            />
+          </Col>
+          <Col>
+            <img
+              style={styles.badge}
+              height="40"
+              alt={textMap.googlePlay}
+              src={googlePlayBadge}
+            />
+          </Col>
+        </Row>
+        <Row style={styles.content} type="flex" justify="center" align="middle">
+          <Col>
+            <IconButton href={githubUrl} type="github" />
+            {/* <IconButton href={instagramUrl} type="instagram" /> */}
+            <IconButton href={twitterUrl} type="twitter" />
+          </Col>
+        </Row>
+        <Row
+          style={styles.links}
+          type="flex"
+          justify="space-between"
+          align="middle"
+        >
+          <Col xs={24} sm={12}>
+            <Link href="/" text={textMap.termsOfUse} />
+            <span> | </span>
+            <Link href="/" text={textMap.privacyPolicy} />
+          </Col>
+          <Col xs={24} sm={12}>
+            <small>{textMap.copyright}</small>
+          </Col>
+        </Row>
+      </Layout.Footer>
+    </div>
+  );
+});
 
-type StyleKey = 'container' | 'content' | 'footer' | 'links';
+type StyleKey =
+  | 'badge'
+  | 'container'
+  | 'content'
+  | 'footerXs'
+  | 'footer'
+  | 'links';
 const styles: Styles<StyleKey> = {
+  badge: {
+    margin: spaceMap.sm,
+  },
   container: {
     backgroundColor: colorMap.primary,
     color: colorMap.translucent,
@@ -77,6 +95,9 @@ const styles: Styles<StyleKey> = {
   },
   content: {
     marginTop: spaceMap.xxl,
+  },
+  footerXs: {
+    clipPath: 'none',
   },
   footer: {
     clipPath: `circle(${lengthMap.footerCircle} at 50% 760%)`,
