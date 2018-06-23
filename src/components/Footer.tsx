@@ -2,7 +2,8 @@ import * as React from 'react';
 import { Col, Layout, Row } from 'antd';
 import { pure } from 'recompose';
 
-import { IconButton, Link } from '.';
+import { Badge, IconButton, ExLink } from './';
+import { BadgeName } from '../enum';
 import { LocaleType } from '../locales';
 import {
   colorMap,
@@ -13,40 +14,30 @@ import {
   Styles,
 } from '../styles';
 
-import appStoreBadge from '../assets/images/en_app_store.svg';
-import googlePlayBadge from '../assets/images/en_google_play.svg';
-
 const githubUrl: string = 'https://github.com/oh-designie';
 const twitterUrl: string = 'https://twitter.com/OhDesignie';
 // const instagramUrl: string = 'https://instagram.com/ohdesignie';
+const termsUrl: string = 'https://www.oh-designie.com/terms';
+const privacyUrl: string = 'https://www.oh-designie.com/privacy';
 
 interface FooterProps {
   readonly textMap: LocaleType;
 }
 
 export const Footer = pure(({ textMap }: FooterProps) => {
+  // TODO: check media queries
   const footerStyle = window.matchMedia('(max-width: 576)').matches
-    ? styles.footer
-    : styles.footerXs;
+    ? styles.footerXs
+    : styles.footer;
   return (
     <div style={footerStyle}>
       <Layout.Footer style={styles.container}>
         <Row style={styles.content} type="flex" justify="center" align="middle">
+          {/* <Col>
+            <Badge style={styles.badge} type={BadgeName.AppStore} />
+          </Col> */}
           <Col>
-            <img
-              style={styles.badge}
-              height="40"
-              alt={textMap.appStore}
-              src={appStoreBadge}
-            />
-          </Col>
-          <Col>
-            <img
-              style={styles.badge}
-              height="40"
-              alt={textMap.googlePlay}
-              src={googlePlayBadge}
-            />
+            <Badge style={styles.badge} type={BadgeName.GooglePlay} />
           </Col>
         </Row>
         <Row style={styles.content} type="flex" justify="center" align="middle">
@@ -63,9 +54,9 @@ export const Footer = pure(({ textMap }: FooterProps) => {
           align="middle"
         >
           <Col xs={24} sm={12}>
-            <Link href="/" text={textMap.termsOfUse} />
+            <ExLink href={termsUrl} text={textMap.terms} />
             <span> | </span>
-            <Link href="/" text={textMap.privacyPolicy} />
+            <ExLink href={privacyUrl} text={textMap.privacy} />
           </Col>
           <Col xs={24} sm={12}>
             <small>{textMap.copyright}</small>
@@ -85,7 +76,8 @@ type StyleKey =
   | 'links';
 const styles: Styles<StyleKey> = {
   badge: {
-    margin: spaceMap.sm,
+    marginRight: spaceMap.sm,
+    marginLeft: spaceMap.sm,
   },
   container: {
     backgroundColor: colorMap.primary,

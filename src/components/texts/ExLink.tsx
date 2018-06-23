@@ -2,25 +2,27 @@ import * as React from 'react';
 
 import { colorMap, fontSizeMap, Styles } from '../../styles';
 
-interface LinkProps {
+interface ExLinkProps {
   readonly href?: string;
+  readonly style?: React.CSSProperties;
   readonly text: string;
 }
 
-interface LinkState {
+interface ExLinkState {
   readonly hover: boolean;
 }
 
-export class Link extends React.Component<LinkProps, LinkState> {
+export class ExLink extends React.Component<ExLinkProps, ExLinkState> {
   state = { hover: false };
 
   render() {
-    const { href = '', text } = this.props;
-    const style = this.state.hover ? styles.over : styles.out;
+    const { href = '', style = {}, text } = this.props;
+    const hoverStyle = this.state.hover ? styles.over : styles.out;
     return (
       <a
-        style={{ ...styles.base, ...style }}
+        style={{ ...styles.base, ...style, ...hoverStyle }}
         href={href}
+        target="_blank"
         onMouseOver={this.onMouseOver}
         onMouseOut={this.onMouseOut}
       >

@@ -26,6 +26,7 @@ export class IconButton extends React.Component<
       <a
         style={textStyle}
         href={href}
+        target="_blank"
         onMouseOver={this.onMouseOver}
         onMouseOut={this.onMouseOut}
       >

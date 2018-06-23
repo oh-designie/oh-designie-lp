@@ -3,8 +3,8 @@ export const EN_US = {
   download: 'Download',
   appStore: 'Download on the App Store',
   googlePlay: 'Get IT ON Google Play',
-  termsOfUse: 'Terms of use',
-  privacyPolicy: 'Privacy policy',
+  terms: 'Terms of Service',
+  privacy: 'Privacy policy',
   copyright: '©2018 Oh Designie',
   categories: { color: 'Color', font: 'Font', layout: 'Layout' },
   games: {

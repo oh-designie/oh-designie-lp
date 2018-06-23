@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Affix, Layout } from 'antd';
+import { Affix, BackTop, Layout } from 'antd';
 import { pure } from 'recompose';
 
 import { About, Footer, Docs, Header, Hero, Features } from '../components';
@@ -29,6 +29,7 @@ const Home = pure(({ textMap }: HomeProps) => {
         <Docs textMap={textMap} />
       </Layout.Content>
       <Footer textMap={textMap} />
+      <BackTop />
     </Layout>
   );
 });
