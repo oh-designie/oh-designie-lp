@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Col, Layout, Row } from 'antd';
-import { Link } from 'react-router-dom';
-import { pure } from 'recompose';
+import { Recomposer } from 'recomposer';
 
 import { Badge } from '../components';
 import { LocaleType } from '../locales';
@@ -12,20 +11,23 @@ interface HeaderProps {
   readonly textMap: LocaleType;
 }
 
-export const Header = pure(({ textMap }: HeaderProps) => (
-  <Layout.Header style={styles.header}>
-    <Row type="flex" justify="space-between" align="middle">
-      <Col>
-        <Link style={styles.logo} to="/">
+export const Header = new Recomposer<HeaderProps>()
+  .withHandlers({
+    onLogoClick: () => () => window.scrollTo(0, 0),
+  })
+  .pure()
+  .enhance(({ textMap, onLogoClick }) => (
+    <Layout.Header style={styles.header}>
+      <Row type="flex" justify="space-between" align="middle">
+        <Col style={styles.logo} onClick={onLogoClick}>
           {textMap.appTitle}
-        </Link>
-      </Col>
-      <Col>
-        <Badge type={BadgeName.GooglePlay} />
-      </Col>
-    </Row>
-  </Layout.Header>
-));
+        </Col>
+        <Col>
+          <Badge type={BadgeName.GooglePlay} />
+        </Col>
+      </Row>
+    </Layout.Header>
+  ));
 
 type StyleKey = 'header' | 'logo';
 const styles: Styles<StyleKey> = {
