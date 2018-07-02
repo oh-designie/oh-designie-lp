@@ -6,13 +6,15 @@ import { Button, Chapter } from '../';
 import { LocaleType } from '../../locales';
 import { fontSizeMap, spaceMap, Styles } from '../../styles';
 
+const gameGuideUrl = 'https://www.oh-designie.com';
+
 interface DocsProps {
   readonly textMap: LocaleType;
 }
 
 export const Docs = pure(({ textMap }: DocsProps) => (
   <Chapter>
-    <Button>
+    <Button href={gameGuideUrl}>
       {textMap.docs}
       <Icon style={styles.btnIcon} type="right" />
     </Button>

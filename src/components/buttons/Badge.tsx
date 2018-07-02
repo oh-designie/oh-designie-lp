@@ -6,6 +6,10 @@ import { fontSizeMap, Styles } from '../../styles';
 import appStoreBadge from '../../assets/images/en_app_store.svg';
 import googlePlayBadge from '../../assets/images/en_google_play.svg';
 
+const appStoreUrl = '';
+const googlePlayUrl =
+  'https://play.google.com/store/apps/details?id=com.ohdesignie.www';
+
 interface BadgeProps {
   readonly type: BadgeName;
   readonly size?: number | string;
@@ -51,12 +55,12 @@ export class Badge extends React.Component<BadgeProps, BadgeState> {
     switch (this.props.type) {
       case 'appStore':
         return {
-          href: '',
+          href: appStoreUrl,
           src: appStoreBadge,
         };
       case 'googlePlay':
         return {
-          href: '',
+          href: googlePlayUrl,
           src: googlePlayBadge,
         };
       default:
