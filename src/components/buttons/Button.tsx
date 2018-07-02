@@ -11,7 +11,7 @@ import {
 } from '../../styles';
 
 interface ButtonProps {
-  readonly onClick?: () => void;
+  readonly href?: string;
   readonly style?: React.CSSProperties;
   readonly type?: ButtonStyle;
 }
@@ -24,21 +24,22 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
   state = { hover: false };
 
   render() {
-    const { children, onClick, style, type = 'default' } = this.props;
+    const { children, href = '', style = {}, type = 'default' } = this.props;
     const typeStyle: React.CSSProperties =
       type === 'default' ? styles.base : styles.ghost;
     const hoverStyle: React.CSSProperties = this.state.hover
       ? styles.over
       : styles.out;
     return (
-      <button
+      <a
         style={{ ...styles.base, ...typeStyle, ...hoverStyle, ...style }}
-        onClick={onClick}
+        href={href}
+        target="_blank"
         onMouseOver={this.onMouseOver}
         onMouseOut={this.onMouseOut}
       >
         {children}
-      </button>
+      </a>
     );
   }
 
@@ -58,9 +59,9 @@ const styles: Styles<StyleKey> = {
     fontSize: fontSizeMap.sm,
     fontWeight: 400,
     outline: 'none',
-    paddingTop: spaceMap.sm,
+    paddingTop: spaceMap.md,
     paddingRight: spaceMap.lg,
-    paddingBottom: spaceMap.sm,
+    paddingBottom: spaceMap.md,
     paddingLeft: spaceMap.lg,
     textAlign: 'center',
     transition: '0.3s all',
