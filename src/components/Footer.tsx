@@ -33,9 +33,9 @@ export const Footer = pure(({ textMap }: FooterProps) => {
     <div style={footerStyle}>
       <Layout.Footer style={styles.container}>
         <Row style={styles.content} type="flex" justify="center" align="middle">
-          {/* <Col>
+          <Col>
             <Badge style={styles.badge} type={BadgeName.AppStore} />
-          </Col> */}
+          </Col>
           <Col>
             <Badge style={styles.badge} type={BadgeName.GooglePlay} />
           </Col>

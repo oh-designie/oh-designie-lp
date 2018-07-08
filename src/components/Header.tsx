@@ -23,14 +23,18 @@ export const Header = new Recomposer<HeaderProps>()
           {textMap.appTitle}
         </Col>
         <Col>
+          <Badge style={styles.badge} type={BadgeName.AppStore} />
           <Badge type={BadgeName.GooglePlay} />
         </Col>
       </Row>
     </Layout.Header>
   ));
 
-type StyleKey = 'header' | 'logo';
+type StyleKey = 'badge' | 'header' | 'logo';
 const styles: Styles<StyleKey> = {
+  badge: {
+    marginRight: spaceMap.sm,
+  },
   header: {
     backgroundColor: colorMap.primary,
     boxShadow: `0 ${spaceMap.xs} ${spaceMap.sm} ${colorMap.shadow}`,

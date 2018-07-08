@@ -6,7 +6,8 @@ import { fontSizeMap, Styles } from '../../styles';
 import appStoreBadge from '../../assets/images/en_app_store.svg';
 import googlePlayBadge from '../../assets/images/en_google_play.svg';
 
-const appStoreUrl = '';
+const appStoreUrl =
+  'https://itunes.apple.com/us/app/oh-designie/id1408436804?ls=1&mt=8';
 const googlePlayUrl =
   'https://play.google.com/store/apps/details?id=com.ohdesignie.www';
 
