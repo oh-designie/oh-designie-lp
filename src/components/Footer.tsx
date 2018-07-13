@@ -35,8 +35,6 @@ export const Footer = pure(({ textMap }: FooterProps) => {
         <Row style={styles.content} type="flex" justify="center" align="middle">
           <Col>
             <Badge style={styles.badge} type={BadgeName.AppStore} />
-          </Col>
-          <Col>
             <Badge style={styles.badge} type={BadgeName.GooglePlay} />
           </Col>
         </Row>
@@ -76,8 +74,8 @@ type StyleKey =
   | 'links';
 const styles: Styles<StyleKey> = {
   badge: {
-    marginRight: spaceMap.sm,
-    marginLeft: spaceMap.sm,
+    marginRight: spaceMap.xs,
+    marginLeft: spaceMap.xs,
   },
   container: {
     backgroundColor: colorMap.primary,

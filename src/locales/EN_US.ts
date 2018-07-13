@@ -9,13 +9,13 @@ export const EN_US = {
   categories: { color: 'Color', font: 'Font', layout: 'Layout' },
   games: {
     brightness: 'Brightness',
-    differentFont: 'Different font',
-    gradient: 'Gradient',
-    majorityCase: 'Majority case',
-    majorityShape: 'Majority shape',
+    colorCode1: 'Color Code 1',
+    majorityCase: 'Majority Case',
+    majorityShape: 'Majority Shape',
     rectangle: 'Rectangle',
+    typeface: 'Typeface',
   },
-  mode: { competition: 'Competition', practice: 'Practice' },
+  modes: { competition: 'Competition', practice: 'Practice' },
   contents: {
     about: {
       title: 'About',
@@ -37,6 +37,10 @@ export const EN_US = {
         desc:
           'Every game belongs to one of the 3 categories below. ' +
           'Color game icons are pink, fonts are bule, and layouts are orange so it is easy to know.',
+      },
+      section3: {
+        title: '3. Games',
+        desc: `As you play, you will get more games available. What's your favorite game?`,
       },
     },
   },

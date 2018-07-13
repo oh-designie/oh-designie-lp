@@ -14,7 +14,7 @@ type ColorKey =
 export const colorMap: Record<ColorKey, string> = {
   white: '#ffffff',
   offWhite: '#fafafa',
-  ash: '#d9d9d9',
+  ash: '#e9e9e9',
   translucent: 'rgba(255, 255, 255, 0.6)',
   primaryLighter: '#afa0f3',
   primary: '#9a86f0',
@@ -39,18 +39,20 @@ type LengthKey =
   | 'footerTop'
   | 'hero'
   | 'heroCircle'
-  | 'minWidth';
+  | 'minWidth'
+  | 'modeIcon';
 export const lengthMap: Record<LengthKey, string> = {
   border: '1px',
   borderRadius: '4px',
   chapterMax: '960px',
-  categoryIcon: '100px',
-  categoryImg: '180px',
+  categoryIcon: '90px',
+  categoryImg: '150px',
   footerCircle: '2000px',
   footerTop: '54px',
   hero: '640px',
   heroCircle: '3200px',
   minWidth: '320px',
+  modeIcon: '44px',
 };
 
 export type SizeKey = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
