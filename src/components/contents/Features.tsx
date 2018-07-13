@@ -14,11 +14,11 @@ import {
 } from '../../styles';
 import { IMAGES } from '../../constants';
 
-interface FeaturesProps {
+interface Props {
   readonly textMap: LocaleType;
 }
 
-export const Features = pure(({ textMap }: FeaturesProps) => {
+export const Features = pure(({ textMap }: Props) => {
   const { categories, modes, games } = textMap;
   const { title, h1, section1, section2, section3 } = textMap.contents.features;
   return (

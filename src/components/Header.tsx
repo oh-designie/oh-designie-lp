@@ -7,11 +7,11 @@ import { LocaleType } from '../locales';
 import { colorMap, fontSizeMap, spaceMap, Styles } from '../styles';
 import { BadgeName } from '../enum';
 
-interface HeaderProps {
+interface Props {
   readonly textMap: LocaleType;
 }
 
-export const Header = new Recomposer<HeaderProps>()
+export const Header = new Recomposer<Props>()
   .withHandlers({
     onLogoClick: () => () => window.scrollTo(0, 0),
   })

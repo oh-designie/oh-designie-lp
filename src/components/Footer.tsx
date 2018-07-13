@@ -15,11 +15,11 @@ import {
 } from '../styles';
 import { URLS } from '../constants';
 
-interface FooterProps {
+interface Props {
   readonly textMap: LocaleType;
 }
 
-export const Footer = pure(({ textMap }: FooterProps) => {
+export const Footer = pure(({ textMap }: Props) => {
   // TODO: check media queries
   const footerStyle = window.matchMedia('(max-width: 576)').matches
     ? styles.footerXs

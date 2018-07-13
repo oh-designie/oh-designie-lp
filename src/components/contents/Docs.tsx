@@ -7,11 +7,11 @@ import { LocaleType } from '../../locales';
 import { fontSizeMap, spaceMap, Styles } from '../../styles';
 import { URLS } from '../../constants';
 
-interface DocsProps {
+interface Props {
   readonly textMap: LocaleType;
 }
 
-export const Docs = pure(({ textMap }: DocsProps) => (
+export const Docs = pure(({ textMap }: Props) => (
   <Chapter>
     <Button href={URLS.GAME_GUIDE.index}>
       {textMap.docs}
