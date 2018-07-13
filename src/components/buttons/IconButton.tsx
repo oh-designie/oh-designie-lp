@@ -3,19 +3,16 @@ import { Icon } from 'antd';
 
 import { colorMap, fontSizeMap, spaceMap, Styles } from '../../styles';
 
-interface IconButtonProps {
+interface Props {
   readonly href?: string;
   readonly type: string;
 }
 
-interface IconButtonState {
+interface State {
   readonly hover: boolean;
 }
 
-export class IconButton extends React.Component<
-  IconButtonProps,
-  IconButtonState
-> {
+export class IconButton extends React.Component<Props, State> {
   state = { hover: false };
 
   render() {

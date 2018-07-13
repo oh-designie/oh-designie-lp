@@ -7,11 +7,11 @@ import { LocaleType } from '../../locales';
 import { lengthMap, spaceMap, Styles } from '../../styles';
 import { IMAGES } from '../../constants';
 
-interface AboutProps {
+interface Props {
   readonly textMap: LocaleType;
 }
 
-export const About = pure(({ textMap }: AboutProps) => {
+export const About = pure(({ textMap }: Props) => {
   const { title, h1, desc } = textMap.contents.about;
   const { color, typography, layout } = textMap.categories;
   return (

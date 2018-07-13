@@ -2,17 +2,17 @@ import * as React from 'react';
 
 import { colorMap, fontSizeMap, Styles } from '../../styles';
 
-interface ExLinkProps {
+interface Props {
   readonly href?: string;
   readonly style?: React.CSSProperties;
   readonly text: string;
 }
 
-interface ExLinkState {
+interface State {
   readonly hover: boolean;
 }
 
-export class ExLink extends React.Component<ExLinkProps, ExLinkState> {
+export class ExLink extends React.Component<Props, State> {
   state = { hover: false };
 
   render() {

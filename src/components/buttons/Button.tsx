@@ -10,17 +10,17 @@ import {
   Styles,
 } from '../../styles';
 
-interface ButtonProps {
+interface Props {
   readonly href?: string;
   readonly style?: React.CSSProperties;
   readonly type?: ButtonStyle;
 }
 
-interface ButtonState {
+interface State {
   readonly hover: boolean;
 }
 
-export class Button extends React.Component<ButtonProps, ButtonState> {
+export class Button extends React.Component<Props, State> {
   state = { hover: false };
 
   render() {

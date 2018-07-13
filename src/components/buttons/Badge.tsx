@@ -4,13 +4,13 @@ import { BadgeName } from '../../enum';
 import { fontSizeMap, Styles } from '../../styles';
 import { IMAGES, URLS } from '../../constants';
 
-interface BadgeProps {
+interface Props {
   readonly type: BadgeName;
   readonly size?: number | string;
   readonly style?: React.CSSProperties;
 }
 
-interface BadgeState {
+interface State {
   readonly hover: boolean;
 }
 
@@ -19,7 +19,7 @@ interface BadgeInfo {
   readonly src: string;
 }
 
-export class Badge extends React.Component<BadgeProps, BadgeState> {
+export class Badge extends React.Component<Props, State> {
   state = { hover: false };
 
   render() {

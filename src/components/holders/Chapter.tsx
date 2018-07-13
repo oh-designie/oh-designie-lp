@@ -10,12 +10,12 @@ import {
   Styles,
 } from '../../styles';
 
-interface ChapterProps {
+interface Props {
   readonly styles?: Partial<Styles<StyleKey>>;
 }
 
 export const Chapter = pure(
-  ({ styles: s = {}, children }: ChapterProps & Partial<React.ReactPortal>) => {
+  ({ styles: s = {}, children }: Props & Partial<React.ReactPortal>) => {
     return (
       <Row style={{ ...styles.row, ...s.row }}>
         <Col>

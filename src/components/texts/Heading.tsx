@@ -3,12 +3,12 @@ import { pure } from 'recompose';
 
 import { colorMap, fontFamilyMap, fontSizeMap, Styles } from '../../styles';
 
-interface HeadingProps {
+interface Props {
   readonly size?: SizeKey;
   readonly text: string;
 }
 
-export const Heading = pure(({ size = 'md', text }: HeadingProps) => {
+export const Heading = pure(({ size = 'md', text }: Props) => {
   const dom: string = size === 'xl' ? 'h1' : size === 'lg' ? 'h2' : 'h3';
   const style = { ...styles.base, ...styles[size] };
   return React.createElement(dom, { style }, text);

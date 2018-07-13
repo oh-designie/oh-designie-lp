@@ -12,11 +12,11 @@ import {
   Styles,
 } from '../styles';
 
-interface HomeProps {
+interface Props {
   readonly textMap: LocaleType;
 }
 
-const Home = pure(({ textMap }: HomeProps) => {
+const Home = pure(({ textMap }: Props) => {
   return (
     <Layout style={styles.container}>
       <Affix>
