@@ -2,9 +2,9 @@ import * as React from 'react';
 import { Col, Layout, Row } from 'antd';
 import { pure } from 'recompose';
 
-import { Badge, IconButton, ExLink } from './';
-import { BadgeName } from '../enum';
-import { LocaleType } from '../locales';
+import { Badge, IconButton, ExLink } from '../../components';
+import { BadgeName } from '../../enum';
+import { LocaleType } from '../../locales';
 import {
   colorMap,
   fontSizeMap,
@@ -12,8 +12,8 @@ import {
   lengthMap,
   spaceMap,
   Styles,
-} from '../styles';
-import { URLS } from '../constants';
+} from '../../styles';
+import { URLS } from '../../constants';
 
 interface Props {
   readonly textMap: LocaleType;

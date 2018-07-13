@@ -2,10 +2,10 @@ import * as React from 'react';
 import { Col, Layout, Row } from 'antd';
 import { Recomposer } from 'recomposer';
 
-import { Badge } from '../components';
-import { LocaleType } from '../locales';
-import { colorMap, fontSizeMap, spaceMap, Styles } from '../styles';
-import { BadgeName } from '../enum';
+import { Badge } from '../../components';
+import { LocaleType } from '../../locales';
+import { colorMap, fontSizeMap, spaceMap, Styles } from '../../styles';
+import { BadgeName } from '../../enum';
 
 interface Props {
   readonly textMap: LocaleType;

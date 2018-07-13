@@ -1,17 +1,18 @@
 import * as React from 'react';
-import { Col, Row } from 'antd';
+import { Col } from 'antd';
 import { pure } from 'recompose';
 
-import { Chapter, Heading } from './../';
-import { LocaleType } from '../../locales';
 import {
-  colorMap,
-  fontFamilyMap,
-  fontSizeMap,
-  lengthMap,
-  spaceMap,
-  Styles,
-} from '../../styles';
+  Chapter,
+  Heading,
+  ImageContainer,
+  FeatureItem,
+  GameItem,
+  CategoryIcon,
+  FeatureIcon,
+} from '..';
+import { LocaleType } from '../../locales';
+import { colorMap, spaceMap, Styles } from '../../styles';
 import { IMAGES } from '../../constants';
 
 interface Props {
@@ -22,235 +23,111 @@ export const Features = pure(({ textMap }: Props) => {
   const { categories, modes, games } = textMap;
   const { title, h1, section1, section2, section3 } = textMap.contents.features;
   return (
-    <Chapter styles={styles}>
+    <Chapter style={styles.container}>
       <Heading size="lg" text={title} />
       <Heading size="xl" text={h1} />
       <section style={styles.section}>
         <Heading text={section1.title} />
         <p>{section1.desc}</p>
-        <Row
-          style={styles.imgContainer}
-          gutter={8}
-          type="flex"
-          justify="center"
-          align="middle"
-        >
+        <ImageContainer>
           <Col xs={24} sm={8}>
-            <figure style={styles.iconImg}>
-              <img
-                style={styles.icon}
-                height={lengthMap.modeIcon}
-                alt={modes.practice}
-                src={IMAGES.MODES.competition}
+            <FeatureItem title={modes.practice}>
+              <FeatureIcon
+                title={modes.practice}
+                imageUrl={IMAGES.MODES.practice}
               />
-              <figcaption style={styles.caption}>{modes.practice}</figcaption>
-            </figure>
+            </FeatureItem>
           </Col>
           <Col xs={24} sm={8}>
-            <figure style={styles.iconImg}>
-              <img
-                style={styles.icon}
-                height={lengthMap.modeIcon}
-                alt={modes.competition}
-                src={IMAGES.MODES.practice}
+            <FeatureItem title={modes.competition}>
+              <FeatureIcon
+                title={modes.competition}
+                imageUrl={IMAGES.MODES.competition}
               />
-              <figcaption style={styles.caption}>
-                {modes.competition}
-              </figcaption>
-            </figure>
+            </FeatureItem>
           </Col>
-        </Row>
+        </ImageContainer>
       </section>
       <section style={styles.section}>
         <Heading text={section2.title} />
         <p>{section2.desc}</p>
-        <Row
-          style={styles.imgContainer}
-          gutter={8}
-          type="flex"
-          justify="center"
-          align="middle"
-        >
+        <ImageContainer>
           <Col xs={24} sm={8}>
-            <figure style={styles.iconImg}>
-              <img
-                height={lengthMap.categoryIcon}
-                alt={categories.color}
-                src={IMAGES.CATEGORIES.color}
+            <FeatureItem title={categories.color}>
+              <CategoryIcon
+                title={categories.color}
+                imageUrl={IMAGES.CATEGORIES.color}
               />
-              <figcaption style={styles.caption}>{categories.color}</figcaption>
-            </figure>
+            </FeatureItem>
           </Col>
           <Col xs={24} sm={8}>
-            <figure style={styles.iconImg}>
-              <img
-                height={lengthMap.categoryIcon}
-                alt={categories.typography}
-                src={IMAGES.CATEGORIES.typography}
+            <FeatureItem title={categories.typography}>
+              <CategoryIcon
+                title={categories.typography}
+                imageUrl={IMAGES.CATEGORIES.typography}
               />
-              <figcaption style={styles.caption}>
-                {categories.typography}
-              </figcaption>
-            </figure>
+            </FeatureItem>
           </Col>
           <Col xs={24} sm={8}>
-            <figure style={styles.iconImg}>
-              <img
-                height={lengthMap.categoryIcon}
-                alt={categories.layout}
-                src={IMAGES.CATEGORIES.layout}
+            <FeatureItem title={categories.layout}>
+              <CategoryIcon
+                title={categories.layout}
+                imageUrl={IMAGES.CATEGORIES.layout}
               />
-              <figcaption style={styles.caption}>
-                {categories.layout}
-              </figcaption>
-            </figure>
+            </FeatureItem>
           </Col>
-        </Row>
+        </ImageContainer>
       </section>
       <section style={styles.section}>
         <Heading text={section3.title} />
         <p>{section3.desc}</p>
-        <Row
-          style={styles.imgContainer}
-          gutter={8}
-          type="flex"
-          justify="center"
-          align="middle"
-        >
+        <ImageContainer>
           <Col xs={24} sm={8} lg={4}>
-            <figure>
-              <img
-                style={styles.gameImg}
-                height={lengthMap.categoryIcon}
-                alt={games.brightness}
-                src={IMAGES.GAMES.brightness}
-              />
-              <figcaption style={styles.caption}>{games.brightness}</figcaption>
-            </figure>
+            <GameItem
+              title={games.brightness}
+              imageUrl={IMAGES.GAMES.brightness}
+            />
           </Col>
           <Col xs={24} sm={8} lg={4}>
-            <figure>
-              <img
-                style={styles.gameImg}
-                height={lengthMap.categoryIcon}
-                alt={games.colorCode1}
-                src={IMAGES.GAMES.colorCode1}
-              />
-              <figcaption style={styles.caption}>{games.colorCode1}</figcaption>
-            </figure>
+            <GameItem
+              title={games.colorCode1}
+              imageUrl={IMAGES.GAMES.colorCode1}
+            />
           </Col>
           <Col xs={24} sm={8} lg={4}>
-            <figure>
-              <img
-                style={styles.gameImg}
-                height={lengthMap.categoryIcon}
-                alt={games.majorityCase}
-                src={IMAGES.GAMES.majorityCase}
-              />
-              <figcaption style={styles.caption}>
-                {games.majorityCase}
-              </figcaption>
-            </figure>
+            <GameItem
+              title={games.majorityCase}
+              imageUrl={IMAGES.GAMES.majorityCase}
+            />
           </Col>
           <Col xs={24} sm={8} lg={4}>
-            <figure>
-              <img
-                style={styles.gameImg}
-                height={lengthMap.categoryIcon}
-                alt={games.majorityShape}
-                src={IMAGES.GAMES.majorityShape}
-              />
-              <figcaption style={styles.caption}>
-                {games.majorityShape}
-              </figcaption>
-            </figure>
+            <GameItem
+              title={games.majorityShape}
+              imageUrl={IMAGES.GAMES.majorityShape}
+            />
           </Col>
           <Col xs={24} sm={8} lg={4}>
-            <figure>
-              <img
-                style={styles.gameImg}
-                height={lengthMap.categoryIcon}
-                alt={games.rectangle}
-                src={IMAGES.GAMES.rectangle}
-              />
-              <figcaption style={styles.caption}>{games.rectangle}</figcaption>
-            </figure>
+            <GameItem
+              title={games.rectangle}
+              imageUrl={IMAGES.GAMES.rectangle}
+            />
           </Col>
           <Col xs={24} sm={8} lg={4}>
-            <figure>
-              <img
-                style={styles.gameImg}
-                height={lengthMap.categoryIcon}
-                alt={games.typeface}
-                src={IMAGES.GAMES.typeface}
-              />
-              <figcaption style={styles.caption}>{games.typeface}</figcaption>
-            </figure>
+            <GameItem title={games.typeface} imageUrl={IMAGES.GAMES.typeface} />
           </Col>
-        </Row>
+        </ImageContainer>
       </section>
     </Chapter>
   );
 });
 
-type StyleKey =
-  | 'caption'
-  | 'gameImg'
-  | 'icon'
-  | 'imgContainer'
-  | 'iconImg'
-  | 'listText'
-  | 'row'
-  | 'section';
+type StyleKey = 'container' | 'imgContainer' | 'section';
 const styles: Styles<StyleKey> = {
-  caption: {
-    color: colorMap.primaryDark,
-    fontFamily: 'Nunito, Open Sans, sans-serif',
-    fontSize: fontSizeMap.sm,
-    fontWeight: 700,
-    textAlign: 'center',
-  },
-  icon: {
-    marginTop: spaceMap.lg,
-    marginBottom: spaceMap.md,
+  container: {
+    backgroundColor: colorMap.white,
   },
   imgContainer: {
     marginTop: spaceMap.xl,
-  },
-  iconImg: {
-    alignItems: 'center',
-    border: `${lengthMap.border} solid ${colorMap.ash}`,
-    borderRadius: lengthMap.borderRadius,
-    height: lengthMap.categoryImg,
-    marginTop: spaceMap.xs,
-    marginRight: 'auto',
-    marginBottom: spaceMap.sm,
-    marginLeft: 'auto',
-    paddingTop: spaceMap.md,
-    width: lengthMap.categoryImg,
-  },
-  gameImg: {
-    alignItems: 'center',
-    border: `${lengthMap.border} solid ${colorMap.ash}`,
-    borderRadius: lengthMap.borderRadius,
-    height: lengthMap.categoryImg,
-    marginTop: spaceMap.xs,
-    marginRight: 'auto',
-    marginBottom: spaceMap.sm,
-    marginLeft: 'auto',
-    width: lengthMap.categoryImg,
-  },
-  listText: {
-    color: colorMap.primaryDark,
-    fontFamily: fontFamilyMap.title,
-    fontSize: fontSizeMap.xs,
-    fontWeight: 300,
-    margin: 0,
-    textAlign: 'center',
-    width: '100%',
-  },
-  row: {
-    backgroundColor: colorMap.white,
   },
   section: {
     marginTop: spaceMap.xxl,

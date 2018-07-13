@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Icon } from 'antd';
 import { pure } from 'recompose';
 
-import { Button, Chapter } from '../';
+import { Button, Chapter } from '../../components';
 import { LocaleType } from '../../locales';
 import { fontSizeMap, spaceMap, Styles } from '../../styles';
 import { URLS } from '../../constants';
