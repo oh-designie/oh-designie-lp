@@ -1,3 +1,5 @@
+// tslint:disable:max-line-length
+
 export const EN_US = {
   appTitle: 'Oh Designie',
   download: 'Download',
@@ -6,7 +8,7 @@ export const EN_US = {
   terms: 'Terms of Service',
   privacy: 'Privacy policy',
   copyright: '©2018 Oh Designie',
-  categories: { color: 'Color', font: 'Font', layout: 'Layout' },
+  categories: { color: 'Color', typography: 'Typography', layout: 'Layout' },
   games: {
     brightness: 'Brightness',
     colorCode1: 'Color Code 1',

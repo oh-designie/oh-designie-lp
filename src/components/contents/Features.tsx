@@ -12,18 +12,7 @@ import {
   spaceMap,
   Styles,
 } from '../../styles';
-
-import competitionIcon from '../../assets/images/icons/competition.svg';
-import practiceIcon from '../../assets/images/icons/practice.svg';
-import colorIcon from '../../assets/images/categories/color.svg';
-import fontIcon from '../../assets/images/categories/font.svg';
-import layoutIcon from '../../assets/images/categories/layout.svg';
-import brightnessIcon from '../../assets/images/games/brightness.png';
-import colorCode1Icon from '../../assets/images/games/color_code1.png';
-import majorityCaseIcon from '../../assets/images/games/majority_case.png';
-import majorityShapeIcon from '../../assets/images/games/majority_shape.png';
-import typefaceIcon from '../../assets/images/games/typeface.png';
-import rectangleIcon from '../../assets/images/games/rectangle.png';
+import { IMAGES } from '../../constants';
 
 interface FeaturesProps {
   readonly textMap: LocaleType;
@@ -52,7 +41,7 @@ export const Features = pure(({ textMap }: FeaturesProps) => {
                 style={styles.icon}
                 height={lengthMap.modeIcon}
                 alt={modes.practice}
-                src={practiceIcon}
+                src={IMAGES.MODES.competition}
               />
               <figcaption style={styles.caption}>{modes.practice}</figcaption>
             </figure>
@@ -63,7 +52,7 @@ export const Features = pure(({ textMap }: FeaturesProps) => {
                 style={styles.icon}
                 height={lengthMap.modeIcon}
                 alt={modes.competition}
-                src={competitionIcon}
+                src={IMAGES.MODES.practice}
               />
               <figcaption style={styles.caption}>
                 {modes.competition}
@@ -87,7 +76,7 @@ export const Features = pure(({ textMap }: FeaturesProps) => {
               <img
                 height={lengthMap.categoryIcon}
                 alt={categories.color}
-                src={colorIcon}
+                src={IMAGES.CATEGORIES.color}
               />
               <figcaption style={styles.caption}>{categories.color}</figcaption>
             </figure>
@@ -96,10 +85,12 @@ export const Features = pure(({ textMap }: FeaturesProps) => {
             <figure style={styles.iconImg}>
               <img
                 height={lengthMap.categoryIcon}
-                alt={categories.font}
-                src={fontIcon}
+                alt={categories.typography}
+                src={IMAGES.CATEGORIES.typography}
               />
-              <figcaption style={styles.caption}>{categories.font}</figcaption>
+              <figcaption style={styles.caption}>
+                {categories.typography}
+              </figcaption>
             </figure>
           </Col>
           <Col xs={24} sm={8}>
@@ -107,7 +98,7 @@ export const Features = pure(({ textMap }: FeaturesProps) => {
               <img
                 height={lengthMap.categoryIcon}
                 alt={categories.layout}
-                src={layoutIcon}
+                src={IMAGES.CATEGORIES.layout}
               />
               <figcaption style={styles.caption}>
                 {categories.layout}
@@ -132,7 +123,7 @@ export const Features = pure(({ textMap }: FeaturesProps) => {
                 style={styles.gameImg}
                 height={lengthMap.categoryIcon}
                 alt={games.brightness}
-                src={brightnessIcon}
+                src={IMAGES.GAMES.brightness}
               />
               <figcaption style={styles.caption}>{games.brightness}</figcaption>
             </figure>
@@ -143,7 +134,7 @@ export const Features = pure(({ textMap }: FeaturesProps) => {
                 style={styles.gameImg}
                 height={lengthMap.categoryIcon}
                 alt={games.colorCode1}
-                src={colorCode1Icon}
+                src={IMAGES.GAMES.colorCode1}
               />
               <figcaption style={styles.caption}>{games.colorCode1}</figcaption>
             </figure>
@@ -154,7 +145,7 @@ export const Features = pure(({ textMap }: FeaturesProps) => {
                 style={styles.gameImg}
                 height={lengthMap.categoryIcon}
                 alt={games.majorityCase}
-                src={majorityCaseIcon}
+                src={IMAGES.GAMES.majorityCase}
               />
               <figcaption style={styles.caption}>
                 {games.majorityCase}
@@ -167,7 +158,7 @@ export const Features = pure(({ textMap }: FeaturesProps) => {
                 style={styles.gameImg}
                 height={lengthMap.categoryIcon}
                 alt={games.majorityShape}
-                src={majorityShapeIcon}
+                src={IMAGES.GAMES.majorityShape}
               />
               <figcaption style={styles.caption}>
                 {games.majorityShape}
@@ -180,7 +171,7 @@ export const Features = pure(({ textMap }: FeaturesProps) => {
                 style={styles.gameImg}
                 height={lengthMap.categoryIcon}
                 alt={games.rectangle}
-                src={rectangleIcon}
+                src={IMAGES.GAMES.rectangle}
               />
               <figcaption style={styles.caption}>{games.rectangle}</figcaption>
             </figure>
@@ -191,7 +182,7 @@ export const Features = pure(({ textMap }: FeaturesProps) => {
                 style={styles.gameImg}
                 height={lengthMap.categoryIcon}
                 alt={games.typeface}
-                src={typefaceIcon}
+                src={IMAGES.GAMES.typeface}
               />
               <figcaption style={styles.caption}>{games.typeface}</figcaption>
             </figure>

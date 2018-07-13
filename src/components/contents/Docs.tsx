@@ -5,8 +5,7 @@ import { pure } from 'recompose';
 import { Button, Chapter } from '../';
 import { LocaleType } from '../../locales';
 import { fontSizeMap, spaceMap, Styles } from '../../styles';
-
-const gameGuideUrl = 'https://www.oh-designie.com';
+import { URLS } from '../../constants';
 
 interface DocsProps {
   readonly textMap: LocaleType;
@@ -14,7 +13,7 @@ interface DocsProps {
 
 export const Docs = pure(({ textMap }: DocsProps) => (
   <Chapter>
-    <Button href={gameGuideUrl}>
+    <Button href={URLS.GAME_GUIDE.index}>
       {textMap.docs}
       <Icon style={styles.btnIcon} type="right" />
     </Button>

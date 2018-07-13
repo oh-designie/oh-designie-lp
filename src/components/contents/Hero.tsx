@@ -3,15 +3,13 @@ import { Col, Row } from 'antd';
 import { pure } from 'recompose';
 
 import { colorMap, lengthMap, spaceMap, Styles } from '../../styles';
-
-import pattern from '../../assets/images/bg_pattern.png';
-import smartphone from '../../assets/images/hero_smartphone.svg';
+import { IMAGES } from '../../constants';
 
 export const Hero = pure(() => (
   <div style={styles.hero}>
     <Row style={styles.container} type="flex" justify="center" align="top">
       <Col md={16} lg={12}>
-        <img style={styles.img} src={smartphone} />
+        <img style={styles.img} src={IMAGES.BACKGROUNDS.smartphone} />
       </Col>
     </Row>
   </div>
@@ -21,7 +19,7 @@ type StyleKey = 'container' | 'hero' | 'img';
 const styles: Styles<StyleKey> = {
   container: {
     backgroundColor: colorMap.white,
-    backgroundImage: `url(${pattern})`,
+    backgroundImage: `url(${IMAGES.BACKGROUNDS.pattern})`,
     backgroundRepeat: 'repeat',
     height: lengthMap.hero,
   },

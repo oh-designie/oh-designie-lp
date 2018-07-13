@@ -5,10 +5,7 @@ import { pure } from 'recompose';
 import { Chapter, Heading } from './../';
 import { LocaleType } from '../../locales';
 import { lengthMap, spaceMap, Styles } from '../../styles';
-
-import colorIcon from '../../assets/images/categories/color.svg';
-import fontIcon from '../../assets/images/categories/font.svg';
-import layoutIcon from '../../assets/images/categories/layout.svg';
+import { IMAGES } from '../../constants';
 
 interface AboutProps {
   readonly textMap: LocaleType;
@@ -16,7 +13,7 @@ interface AboutProps {
 
 export const About = pure(({ textMap }: AboutProps) => {
   const { title, h1, desc } = textMap.contents.about;
-  const { color, font, layout } = textMap.categories;
+  const { color, typography, layout } = textMap.categories;
   return (
     <Chapter>
       <Heading size="lg" text={title} />
@@ -33,19 +30,19 @@ export const About = pure(({ textMap }: AboutProps) => {
             style={styles.img}
             height={lengthMap.categoryIcon}
             alt={color}
-            src={colorIcon}
+            src={IMAGES.CATEGORIES.color}
           />
           <img
             style={styles.img}
             height={lengthMap.categoryIcon}
-            alt={font}
-            src={fontIcon}
+            alt={typography}
+            src={IMAGES.CATEGORIES.typography}
           />
           <img
             style={styles.img}
             height={lengthMap.categoryIcon}
             alt={layout}
-            src={layoutIcon}
+            src={IMAGES.CATEGORIES.layout}
           />
         </Col>
       </Row>
