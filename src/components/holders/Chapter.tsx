@@ -10,21 +10,19 @@ import {
   Styles,
 } from '../../styles';
 
-interface Props {
-  readonly styles?: Partial<Styles<StyleKey>>;
+interface Props extends Partial<React.ReactPortal> {
+  readonly style?: React.CSSProperties;
 }
 
-export const Chapter = pure(
-  ({ styles: s = {}, children }: Props & Partial<React.ReactPortal>) => {
-    return (
-      <Row style={{ ...styles.row, ...s.row }}>
-        <Col>
-          <section style={styles.content}>{children}</section>
-        </Col>
-      </Row>
-    );
-  },
-);
+export const Chapter = pure(({ style = {}, children }: Props) => {
+  return (
+    <Row style={{ ...styles.row, ...style }}>
+      <Col>
+        <section style={styles.content}>{children}</section>
+      </Col>
+    </Row>
+  );
+});
 
 type StyleKey = 'row' | 'content';
 const styles: Styles<StyleKey> = {

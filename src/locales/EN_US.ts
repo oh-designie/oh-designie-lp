@@ -38,7 +38,7 @@ export const EN_US = {
         title: '2. Categories',
         desc:
           'Every game belongs to one of the 3 categories below. ' +
-          'Color game icons are pink, fonts are bule, and layouts are orange so it is easy to know.',
+          'Color game icons are pink, typographys are bule, and layouts are orange so it is easy to know.',
       },
       section3: {
         title: '3. Games',

@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Col, Row } from 'antd';
+import { Col } from 'antd';
 import { pure } from 'recompose';
 
-import { Chapter, Heading } from './../';
+import { Chapter, Heading, ImageContainer } from '../../components';
 import { LocaleType } from '../../locales';
-import { lengthMap, spaceMap, Styles } from '../../styles';
 import { IMAGES } from '../../constants';
+import { CategoryIcon } from '../icons';
 
 interface Props {
   readonly textMap: LocaleType;
@@ -19,44 +19,20 @@ export const About = pure(({ textMap }: Props) => {
       <Heading size="lg" text={title} />
       <Heading size="xl" text={h1} />
       <p>{desc}</p>
-      <Row
-        style={styles.imgContainer}
-        type="flex"
-        justify="center"
-        align="middle"
-      >
+      <ImageContainer>
         <Col>
-          <img
-            style={styles.img}
-            height={lengthMap.categoryIcon}
-            alt={color}
-            src={IMAGES.CATEGORIES.color}
-          />
-          <img
-            style={styles.img}
-            height={lengthMap.categoryIcon}
-            alt={typography}
-            src={IMAGES.CATEGORIES.typography}
-          />
-          <img
-            style={styles.img}
-            height={lengthMap.categoryIcon}
-            alt={layout}
-            src={IMAGES.CATEGORIES.layout}
+          <CategoryIcon title={color} imageUrl={IMAGES.CATEGORIES.color} />
+        </Col>
+        <Col>
+          <CategoryIcon
+            title={typography}
+            imageUrl={IMAGES.CATEGORIES.typography}
           />
         </Col>
-      </Row>
+        <Col>
+          <CategoryIcon title={layout} imageUrl={IMAGES.CATEGORIES.layout} />
+        </Col>
+      </ImageContainer>
     </Chapter>
   );
 });
-
-type StyleKey = 'img' | 'imgContainer';
-const styles: Styles<StyleKey> = {
-  img: {
-    marginRight: spaceMap.sm,
-    marginLeft: spaceMap.sm,
-  },
-  imgContainer: {
-    marginTop: spaceMap.xl,
-  },
-};
