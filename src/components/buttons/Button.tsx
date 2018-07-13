@@ -73,10 +73,10 @@ const styles: Styles<StyleKey> = {
     border: `${lengthMap.border} solid ${colorMap.white}`,
   },
   over: {
-    backgroundColor: colorMap.primaryLighter,
+    backgroundColor: colorMap.accentLighter,
     boxShadow: `0 ${spaceMap.sm} ${spaceMap.md} ${colorMap.shadow}`,
   },
   out: {
-    backgroundColor: colorMap.primary,
+    backgroundColor: colorMap.accent,
   },
 };

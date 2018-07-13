@@ -2,14 +2,7 @@ import * as React from 'react';
 
 import { BadgeName } from '../../enum';
 import { fontSizeMap, Styles } from '../../styles';
-
-import appStoreBadge from '../../assets/images/en_app_store.svg';
-import googlePlayBadge from '../../assets/images/en_google_play.svg';
-
-const appStoreUrl =
-  'https://itunes.apple.com/us/app/oh-designie/id1408436804?ls=1&mt=8';
-const googlePlayUrl =
-  'https://play.google.com/store/apps/details?id=com.ohdesignie.www';
+import { IMAGES, URLS } from '../../constants';
 
 interface BadgeProps {
   readonly type: BadgeName;
@@ -51,18 +44,17 @@ export class Badge extends React.Component<BadgeProps, BadgeState> {
     );
   }
 
-  // TODO: Apply download URLs
   private getInfo(): BadgeInfo {
     switch (this.props.type) {
       case 'appStore':
         return {
-          href: appStoreUrl,
-          src: appStoreBadge,
+          href: URLS.STORES.appStore,
+          src: IMAGES.BADGES.appStore,
         };
       case 'googlePlay':
         return {
-          href: googlePlayUrl,
-          src: googlePlayBadge,
+          href: URLS.STORES.googlePlay,
+          src: IMAGES.BADGES.googlePlay,
         };
       default:
         return {

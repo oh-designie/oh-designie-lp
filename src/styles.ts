@@ -10,6 +10,8 @@ type ColorKey =
   | 'primary'
   | 'primaryDarker'
   | 'primaryDark'
+  | 'accentLighter'
+  | 'accent'
   | 'shadow';
 export const colorMap: Record<ColorKey, string> = {
   white: '#ffffff',
@@ -20,6 +22,8 @@ export const colorMap: Record<ColorKey, string> = {
   primary: '#9a86f0',
   primaryDarker: '#8674d6',
   primaryDark: '#594f8b',
+  accentLighter: '#c290f9',
+  accent: '#bc80fb',
   shadow: 'rgba(89, 79, 139, 0.3)',
 };
 

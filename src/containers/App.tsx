@@ -4,7 +4,7 @@ import { pure } from 'recompose';
 
 import '../assets/css/styles.css';
 
-import { Home } from '.';
+import { Home } from './';
 import { EN_US } from '../locales';
 
 export const App = pure(() => (

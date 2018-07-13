@@ -13,12 +13,7 @@ import {
   spaceMap,
   Styles,
 } from '../styles';
-
-const githubUrl: string = 'https://github.com/oh-designie';
-const twitterUrl: string = 'https://twitter.com/OhDesignie';
-// const instagramUrl: string = 'https://instagram.com/ohdesignie';
-const termsUrl: string = 'https://www.oh-designie.com/terms';
-const privacyUrl: string = 'https://www.oh-designie.com/privacy';
+import { URLS } from '../constants';
 
 interface FooterProps {
   readonly textMap: LocaleType;
@@ -40,9 +35,8 @@ export const Footer = pure(({ textMap }: FooterProps) => {
         </Row>
         <Row style={styles.content} type="flex" justify="center" align="middle">
           <Col>
-            <IconButton href={githubUrl} type="github" />
-            {/* <IconButton href={instagramUrl} type="instagram" /> */}
-            <IconButton href={twitterUrl} type="twitter" />
+            <IconButton href={URLS.github} type="github" />
+            <IconButton href={URLS.twitter} type="twitter" />
           </Col>
         </Row>
         <Row
@@ -52,9 +46,9 @@ export const Footer = pure(({ textMap }: FooterProps) => {
           align="middle"
         >
           <Col xs={24} sm={12}>
-            <ExLink href={termsUrl} text={textMap.terms} />
+            <ExLink href={URLS.GAME_GUIDE.terms} text={textMap.terms} />
             <span> | </span>
-            <ExLink href={privacyUrl} text={textMap.privacy} />
+            <ExLink href={URLS.GAME_GUIDE.privacy} text={textMap.privacy} />
           </Col>
           <Col xs={24} sm={12}>
             <small>{textMap.copyright}</small>
