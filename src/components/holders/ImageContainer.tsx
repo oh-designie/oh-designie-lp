@@ -8,7 +8,6 @@ export const ImageContainer = pure(({ children, ...props }: RowProps) => {
   const {
     style = {},
     gutter = 8,
-    type = 'flex',
     justify = 'center',
     align = 'middle',
   } = props;
@@ -16,7 +15,6 @@ export const ImageContainer = pure(({ children, ...props }: RowProps) => {
     <Row
       style={{ ...styles.container, ...style }}
       gutter={gutter}
-      type={type}
       justify={justify}
       align={align}
     >

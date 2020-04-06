@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Icon } from 'antd';
+import { ArrowRightOutlined } from '@ant-design/icons';
 import { pure } from 'recompose';
 
 import { Button, Chapter } from '../../components';
@@ -15,7 +15,7 @@ export const Docs = pure(({ textMap }: Props) => (
   <Chapter>
     <Button href={URLS.GAME_GUIDE.index}>
       {textMap.docs}
-      <Icon style={styles.btnIcon} type="right" />
+      <ArrowRightOutlined style={styles.btnIcon} />
     </Button>
   </Chapter>
 ));

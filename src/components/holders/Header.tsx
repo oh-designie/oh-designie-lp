@@ -18,7 +18,7 @@ export const Header = new Recomposer<Props>()
   .pure()
   .enhance(({ textMap, onLogoClick }) => (
     <Layout.Header style={styles.header}>
-      <Row type="flex" justify="space-between" align="middle">
+      <Row justify="space-between" align="middle">
         <Col style={styles.logo} onClick={onLogoClick}>
           {textMap.appTitle}
         </Col>

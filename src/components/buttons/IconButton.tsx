@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Icon } from 'antd';
+import { GithubOutlined, TwitterOutlined } from '@ant-design/icons';
 
 import { colorMap, fontSizeMap, spaceMap, Styles } from '../../styles';
 
@@ -15,8 +15,19 @@ interface State {
 export class IconButton extends React.Component<Props, State> {
   state = { hover: false };
 
+  getIcon = () => {
+    const { type } = this.props;
+    switch (type) {
+      case 'github':
+        return <GithubOutlined style={styles.icon} />;
+      case 'twitter':
+      default:
+        return <TwitterOutlined style={styles.icon} />;
+    }
+  };
+
   render() {
-    const { href = '', type } = this.props;
+    const { href = '' } = this.props;
     const { hover } = this.state;
     const textStyle: React.CSSProperties = hover ? styles.over : styles.out;
     return (
@@ -27,7 +38,7 @@ export class IconButton extends React.Component<Props, State> {
         onMouseOver={this.onMouseOver}
         onMouseOut={this.onMouseOut}
       >
-        <Icon style={styles.icon} type={type} />
+        {this.getIcon()}
       </a>
     );
   }
