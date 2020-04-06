@@ -27,24 +27,19 @@ export const Footer = pure(({ textMap }: Props) => {
   return (
     <div style={footerStyle}>
       <Layout.Footer style={styles.container}>
-        <Row style={styles.content} type="flex" justify="center" align="middle">
+        <Row style={styles.content} justify="center" align="middle">
           <Col>
             <Badge style={styles.badge} type={BadgeName.AppStore} />
             <Badge style={styles.badge} type={BadgeName.GooglePlay} />
           </Col>
         </Row>
-        <Row style={styles.content} type="flex" justify="center" align="middle">
+        <Row style={styles.content} justify="center" align="middle">
           <Col>
             <IconButton href={URLS.github} type="github" />
             <IconButton href={URLS.twitter} type="twitter" />
           </Col>
         </Row>
-        <Row
-          style={styles.links}
-          type="flex"
-          justify="space-between"
-          align="middle"
-        >
+        <Row style={styles.links} justify="space-between" align="middle">
           <Col xs={24} sm={12}>
             <ExLink href={URLS.GAME_GUIDE.terms} text={textMap.terms} />
             <span> | </span>

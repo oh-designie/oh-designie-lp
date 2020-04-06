@@ -7,7 +7,7 @@ import { IMAGES } from '../../constants';
 
 export const Hero = pure(() => (
   <div style={styles.hero}>
-    <Row style={styles.container} type="flex" justify="center" align="top">
+    <Row style={styles.container} justify="center" align="top">
       <Col md={16} lg={12}>
         <img style={styles.img} src={IMAGES.BACKGROUNDS.smartphone} />
       </Col>
