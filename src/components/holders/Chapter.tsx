@@ -17,8 +17,8 @@ interface Props extends Partial<React.ReactPortal> {
 export const Chapter = pure(({ style = {}, children }: Props) => {
   return (
     <Row style={{ ...styles.row, ...style }}>
-      <Col>
-        <section style={styles.content}>{children}</section>
+      <Col style={styles.content}>
+        <section >{children}</section>
       </Col>
     </Row>
   );
